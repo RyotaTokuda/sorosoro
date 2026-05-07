@@ -1,0 +1,825 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0675518A7650E357F63E7FC6 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493479CE1BA8AF644D290E0 /* NotificationService.swift */; };
+		090E71B4B13EACA6A51423E5 /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */; };
+		0A8C3F34E5BC0422A7603AE4 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80C066093AB7EB9C802BA /* PaywallView.swift */; };
+		0F1FD94891CBE8B428CA8E05 /* SyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18632CFC0BFEE95D5789D8A6 /* SyncCoordinator.swift */; };
+		0F2DA1FA4C64490801EB3937 /* WatchItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B473993ED7F14B3A3CD9E /* WatchItemDetailView.swift */; };
+		0FD4D6406BD5E48BD8B9C0BE /* DefaultTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386145F340945C53322C7552 /* DefaultTemplates.swift */; };
+		102B4EF1A2FA32ABA903BA90 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0679B21D79E5A712A74C7A9B /* WatchHomeView.swift */; };
+		16232DAC182E8E793F37AD85 /* ShoppingListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */; };
+		1D8EB834386552D4C62C022D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043129A13030A2438C6759D /* SettingsView.swift */; };
+		2017AC9853E9B99D9EF31F9E /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4208B9475E0D74198C54E5 /* SettingsStore.swift */; };
+		211596E64D32420802C4561B /* ItemTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80AAE5E6A131091C74DA40 /* ItemTemplate.swift */; };
+		22B793D7E180DEADBE32F1E7 /* DefaultTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386145F340945C53322C7552 /* DefaultTemplates.swift */; };
+		236B7C89688FB2E03AE68066 /* CKRecord+Sorosoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */; };
+		2E825176BF24A29D7259F374 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4208B9475E0D74198C54E5 /* SettingsStore.swift */; };
+		2E9523BE83848ADA798D87EE /* ShoppingListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */; };
+		30BE1BA9213545A64E959DC2 /* UserProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1BA5CE9A0C99A966405BE /* UserProfileStore.swift */; };
+		35E7268C2451EF9ED20BB7A1 /* SyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18632CFC0BFEE95D5789D8A6 /* SyncCoordinator.swift */; };
+		3B761FE976627A0EBD1CF37C /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7F615A4944E13E264AFEB /* UserProfile.swift */; };
+		3EA56C10BAA6162396BEBC4A /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FD1D4D28AED51EAA8E529 /* ItemFormView.swift */; };
+		426C1F28B78EE249556DCFD5 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCE5B26C0AB47EB718F7A7 /* CloudKitService.swift */; };
+		45047DECD4B845A0314B64A4 /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCAB353080B6F8EDBB4A886 /* PlanService.swift */; };
+		488938083FCE3F604D78207C /* WatchShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5ACFD6E6A8DAA2C130D52 /* WatchShoppingListView.swift */; };
+		48A6D00DD1E971DF99ED7665 /* WatchItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028772E75E0FA2A77E64D68 /* WatchItemListView.swift */; };
+		49C6540A51FE4D5F54FFEA1E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF722ED51E6363679210120 /* Item.swift */; };
+		4F3152588B5606194B2BE801 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457C961AF51A38E29941782 /* ItemListView.swift */; };
+		5A491F3495EF1ACD903A9AC7 /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */; };
+		5CD672E30D98AB58C3A7D2AF /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EE42806F5B47723754FEF /* ItemStore.swift */; };
+		5F0E7BEBE4431161E6BD422D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE1617158605B1CB87E59 /* Constants.swift */; };
+		637DC4AFDA3DDC1D3A913A7D /* SorosoroWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15244C5E009EB45DAF05842A /* SorosoroWatchApp.swift */; };
+		69FD1304095A632DDF0E4BBA /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCE5B26C0AB47EB718F7A7 /* CloudKitService.swift */; };
+		6C10E939FD15AFFC9D77ADFC /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDF3ACFC8745E64167F6E67 /* Mode.swift */; };
+		731216FED0A7C79282C096F1 /* TemplatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6775D22AEA5B9732D19F398F /* TemplatePickerView.swift */; };
+		7A62133222B49C329C943020 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF722ED51E6363679210120 /* Item.swift */; };
+		7FBBCAEE5C8953145E14AA5D /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */; };
+		85511BF7EE742E912EEB20E6 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCE5B26C0AB47EB718F7A7 /* CloudKitService.swift */; };
+		8739EB1E5027FA636DE9C560 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EE42806F5B47723754FEF /* ItemStore.swift */; };
+		8B88EAC01945A72B021EC5EB /* DefaultTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386145F340945C53322C7552 /* DefaultTemplates.swift */; };
+		8D9909906E8CDBC100958304 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE1617158605B1CB87E59 /* Constants.swift */; };
+		8DB171B768784A0FD9011A48 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7F615A4944E13E264AFEB /* UserProfile.swift */; };
+		8E1567DFF4289B0239735434 /* ItemTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80AAE5E6A131091C74DA40 /* ItemTemplate.swift */; };
+		8F01D027630744F3D90F2625 /* UserProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1BA5CE9A0C99A966405BE /* UserProfileStore.swift */; };
+		9074E9AAAA3424C40979316B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF722ED51E6363679210120 /* Item.swift */; };
+		90763841093DD53B92C317D0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493479CE1BA8AF644D290E0 /* NotificationService.swift */; };
+		945E2DEA6AB3B0B139E6D0C8 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDF3ACFC8745E64167F6E67 /* Mode.swift */; };
+		94B126527D5E68BB5232647E /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDF3ACFC8745E64167F6E67 /* Mode.swift */; };
+		95DA4DD3EE6EB954299F1ED4 /* CKRecord+Sorosoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */; };
+		975243D8DA61D24D2B36EA5A /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */; };
+		97FE6BF8F3C2D841BCE83858 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DCBFC58DAB88D50897BD8 /* ShoppingListView.swift */; };
+		99BB4341BCA720925D5F7574 /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1BE066FA3D7C12ED6AEB97 /* SharingView.swift */; };
+		9D4482A364C8E66745BE7758 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4208B9475E0D74198C54E5 /* SettingsStore.swift */; };
+		9DF5D61968B0F7EFFEDE58A0 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EE42806F5B47723754FEF /* ItemStore.swift */; };
+		9FADB33A965D2ECCC7CBE67B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545BE68A430489613A0CD91 /* AppSettings.swift */; };
+		A577DFD4091529AC6BDAFAF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434AD2FEA2B0651F8607CFA /* ContentView.swift */; };
+		AD69B1059A8A40335CE8E6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E101A7CDAB3E62EF3F342CFA /* Assets.xcassets */; };
+		B59C7854E2DF4B707895F528 /* ItemTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80AAE5E6A131091C74DA40 /* ItemTemplate.swift */; };
+		B64C8646EB606A6252EA21D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4036CB8A6B82B3440829B40 /* Assets.xcassets */; };
+		B7E9A8E16B6B74DA21E88D93 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493479CE1BA8AF644D290E0 /* NotificationService.swift */; };
+		B8D90BE032A792E2749B017C /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545BE68A430489613A0CD91 /* AppSettings.swift */; };
+		B97B4D2CC4B12E9D8C970B24 /* SyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18632CFC0BFEE95D5789D8A6 /* SyncCoordinator.swift */; };
+		BDC329979371D6FED3DB48D5 /* ShoppingListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */; };
+		BEF83840B3093ABE94154944 /* ItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1F31E8D3DBAD3E63150A9A /* ItemStoreTests.swift */; };
+		BF5FDE85138A0D4C72CD074F /* ShoppingListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */; };
+		C1C1D8C369BB990E0A444772 /* UserProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1BA5CE9A0C99A966405BE /* UserProfileStore.swift */; };
+		C8658DB557556E758DEF8CC6 /* PlanLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83486DF54373B39B163DC9B /* PlanLimits.swift */; };
+		CC38B06A94C6AAD19F2CBC6D /* SorosoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF58A3A970EEA7C1EEBC19D /* SorosoroApp.swift */; };
+		CE1FF9E6122B4858751CF0A5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545BE68A430489613A0CD91 /* AppSettings.swift */; };
+		D0657A50C0DD5E218CDE86B1 /* Sorosoro.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 754DBD028E80D031C31070B6 /* Sorosoro.storekit */; };
+		D1BA87246D07180699672E43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE1617158605B1CB87E59 /* Constants.swift */; };
+		D703FD22759D7C213970274C /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC53458605289DAD2A7C96 /* ItemDetailView.swift */; };
+		D717F9ED461463DA1E288D36 /* PlanLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83486DF54373B39B163DC9B /* PlanLimits.swift */; };
+		DF6BC334BA27FE8B2C7E6C70 /* ShoppingListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */; };
+		E0CF6F80AB917921CA4F8C6B /* PlanLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83486DF54373B39B163DC9B /* PlanLimits.swift */; };
+		E31F36A363760C0BCACB73E1 /* ShoppingListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */; };
+		E500103551420BCB99F3258E /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCAB353080B6F8EDBB4A886 /* PlanService.swift */; };
+		EBF75D1203BDFE4103D6B8DD /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCAB353080B6F8EDBB4A886 /* PlanService.swift */; };
+		ECEA449052ABA67BF602E1BD /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */; };
+		F07F3F9FC30E809BE1343976 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD6EB2474E5B58D60D57203 /* OnboardingView.swift */; };
+		F2F3EC11ACFD9F4EB256725A /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */; };
+		F646802A9D86C9E0C72D912A /* CKRecord+Sorosoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */; };
+		F8FBA7EA3B56F7079F2BBE7A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7F615A4944E13E264AFEB /* UserProfile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F4ABCCB5288B494DDAED927 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9570778397E60C15929CB15E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CE760B095E7C9B65D6B954F;
+			remoteInfo = Sorosoro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0679B21D79E5A712A74C7A9B /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
+		0FA1BA5CE9A0C99A966405BE /* UserProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStore.swift; sourceTree = "<group>"; };
+		11D80C066093AB7EB9C802BA /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		15244C5E009EB45DAF05842A /* SorosoroWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorosoroWatchApp.swift; sourceTree = "<group>"; };
+		178B473993ED7F14B3A3CD9E /* WatchItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchItemDetailView.swift; sourceTree = "<group>"; };
+		18632CFC0BFEE95D5789D8A6 /* SyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncCoordinator.swift; sourceTree = "<group>"; };
+		2028772E75E0FA2A77E64D68 /* WatchItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchItemListView.swift; sourceTree = "<group>"; };
+		22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncService.swift; sourceTree = "<group>"; };
+		23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Sorosoro.swift"; sourceTree = "<group>"; };
+		24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntry.swift; sourceTree = "<group>"; };
+		2CF58A3A970EEA7C1EEBC19D /* SorosoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorosoroApp.swift; sourceTree = "<group>"; };
+		2E3EE42806F5B47723754FEF /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		3043129A13030A2438C6759D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		31CC53458605289DAD2A7C96 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		386145F340945C53322C7552 /* DefaultTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTemplates.swift; sourceTree = "<group>"; };
+		3D80AAE5E6A131091C74DA40 /* ItemTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTemplate.swift; sourceTree = "<group>"; };
+		464BE1617158605B1CB87E59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListStore.swift; sourceTree = "<group>"; };
+		4F4208B9475E0D74198C54E5 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		6457C961AF51A38E29941782 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		6545BE68A430489613A0CD91 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		6775D22AEA5B9732D19F398F /* TemplatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePickerView.swift; sourceTree = "<group>"; };
+		716662A1DC22E34DD178B7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		754DBD028E80D031C31070B6 /* Sorosoro.storekit */ = {isa = PBXFileReference; path = Sorosoro.storekit; sourceTree = "<group>"; };
+		81B5ACFD6E6A8DAA2C130D52 /* WatchShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchShoppingListView.swift; sourceTree = "<group>"; };
+		855DCBFC58DAB88D50897BD8 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		8FF722ED51E6363679210120 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		93C92F12778254404C27CA03 /* SorosoroWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SorosoroWatch.entitlements; sourceTree = "<group>"; };
+		9493479CE1BA8AF644D290E0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9A1F31E8D3DBAD3E63150A9A /* ItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStoreTests.swift; sourceTree = "<group>"; };
+		ADB782C1F45A9499FDE6737A /* SorosoroWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SorosoroWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADD0CDCE3E0BDE5A11F6969D /* Sorosoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sorosoro.entitlements; sourceTree = "<group>"; };
+		B603132F2741123F3C30ABF0 /* Sorosoro.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Sorosoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B7F615A4944E13E264AFEB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		BB1BE066FA3D7C12ED6AEB97 /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
+		C4036CB8A6B82B3440829B40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateStore.swift; sourceTree = "<group>"; };
+		CC8FD1D4D28AED51EAA8E529 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
+		DBCAB353080B6F8EDBB4A886 /* PlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanService.swift; sourceTree = "<group>"; };
+		DFD6EB2474E5B58D60D57203 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E101A7CDAB3E62EF3F342CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F434AD2FEA2B0651F8607CFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F6FCE5B26C0AB47EB718F7A7 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		F83486DF54373B39B163DC9B /* PlanLimits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanLimits.swift; sourceTree = "<group>"; };
+		FBDF3ACFC8745E64167F6E67 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		FC8F04B947AE80C04202CBE6 /* SorosoroTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SorosoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		11A192A5F5D20AACC49FAADE /* SorosoroWatch */ = {
+			isa = PBXGroup;
+			children = (
+				93C92F12778254404C27CA03 /* SorosoroWatch.entitlements */,
+				D8BA3BFA01838EE14A0C7DC5 /* App */,
+				81AB96AC2A11E93601416C10 /* Resources */,
+				E3EEC439224C64565C93B9CD /* Views */,
+			);
+			path = SorosoroWatch;
+			sourceTree = "<group>";
+		};
+		18D281C9204979EB3137C88A = {
+			isa = PBXGroup;
+			children = (
+				C78A71A285194421C69B08F9 /* Shared */,
+				66BFE2C2F78BAF408B617A24 /* Sorosoro */,
+				BD5421AD338080CAC0EEBB07 /* SorosoroTests */,
+				11A192A5F5D20AACC49FAADE /* SorosoroWatch */,
+				463D564F3CE958F86523EF0F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4474D6593BFEA84969B763F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6545BE68A430489613A0CD91 /* AppSettings.swift */,
+				8FF722ED51E6363679210120 /* Item.swift */,
+				3D80AAE5E6A131091C74DA40 /* ItemTemplate.swift */,
+				FBDF3ACFC8745E64167F6E67 /* Mode.swift */,
+				F83486DF54373B39B163DC9B /* PlanLimits.swift */,
+				24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */,
+				B6B7F615A4944E13E264AFEB /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		463D564F3CE958F86523EF0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B603132F2741123F3C30ABF0 /* Sorosoro.app */,
+				FC8F04B947AE80C04202CBE6 /* SorosoroTests.xctest */,
+				ADB782C1F45A9499FDE6737A /* SorosoroWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		539FA659AF37747E0ECC1E7D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */,
+				F6FCE5B26C0AB47EB718F7A7 /* CloudKitService.swift */,
+				2E3EE42806F5B47723754FEF /* ItemStore.swift */,
+				9493479CE1BA8AF644D290E0 /* NotificationService.swift */,
+				DBCAB353080B6F8EDBB4A886 /* PlanService.swift */,
+				4F4208B9475E0D74198C54E5 /* SettingsStore.swift */,
+				4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */,
+				18632CFC0BFEE95D5789D8A6 /* SyncCoordinator.swift */,
+				CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */,
+				0FA1BA5CE9A0C99A966405BE /* UserProfileStore.swift */,
+				22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5CE8A277C657DC2E8E57E014 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F434AD2FEA2B0651F8607CFA /* ContentView.swift */,
+				31CC53458605289DAD2A7C96 /* ItemDetailView.swift */,
+				CC8FD1D4D28AED51EAA8E529 /* ItemFormView.swift */,
+				6457C961AF51A38E29941782 /* ItemListView.swift */,
+				DFD6EB2474E5B58D60D57203 /* OnboardingView.swift */,
+				11D80C066093AB7EB9C802BA /* PaywallView.swift */,
+				3043129A13030A2438C6759D /* SettingsView.swift */,
+				BB1BE066FA3D7C12ED6AEB97 /* SharingView.swift */,
+				855DCBFC58DAB88D50897BD8 /* ShoppingListView.swift */,
+				6775D22AEA5B9732D19F398F /* TemplatePickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66BFE2C2F78BAF408B617A24 /* Sorosoro */ = {
+			isa = PBXGroup;
+			children = (
+				ADD0CDCE3E0BDE5A11F6969D /* Sorosoro.entitlements */,
+				99946B3990D677949A9518CC /* App */,
+				C249D933651B7F1AF00F08F1 /* Resources */,
+				D523E4BEF73FBE295EE1440F /* ViewModels */,
+				5CE8A277C657DC2E8E57E014 /* Views */,
+			);
+			path = Sorosoro;
+			sourceTree = "<group>";
+		};
+		81AB96AC2A11E93601416C10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E101A7CDAB3E62EF3F342CFA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		99946B3990D677949A9518CC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2CF58A3A970EEA7C1EEBC19D /* SorosoroApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BD5421AD338080CAC0EEBB07 /* SorosoroTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A1F31E8D3DBAD3E63150A9A /* ItemStoreTests.swift */,
+			);
+			path = SorosoroTests;
+			sourceTree = "<group>";
+		};
+		C249D933651B7F1AF00F08F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4036CB8A6B82B3440829B40 /* Assets.xcassets */,
+				716662A1DC22E34DD178B7B4 /* Info.plist */,
+				754DBD028E80D031C31070B6 /* Sorosoro.storekit */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C78A71A285194421C69B08F9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				464BE1617158605B1CB87E59 /* Constants.swift */,
+				4474D6593BFEA84969B763F3 /* Models */,
+				539FA659AF37747E0ECC1E7D /* Services */,
+				FEF71B253F982CF213FEEBF7 /* Templates */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D523E4BEF73FBE295EE1440F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D8BA3BFA01838EE14A0C7DC5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				15244C5E009EB45DAF05842A /* SorosoroWatchApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E3EEC439224C64565C93B9CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0679B21D79E5A712A74C7A9B /* WatchHomeView.swift */,
+				178B473993ED7F14B3A3CD9E /* WatchItemDetailView.swift */,
+				2028772E75E0FA2A77E64D68 /* WatchItemListView.swift */,
+				81B5ACFD6E6A8DAA2C130D52 /* WatchShoppingListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FEF71B253F982CF213FEEBF7 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				386145F340945C53322C7552 /* DefaultTemplates.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CE760B095E7C9B65D6B954F /* Sorosoro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66EA074305FD3D2C19CB6635 /* Build configuration list for PBXNativeTarget "Sorosoro" */;
+			buildPhases = (
+				3975064BEBCE4B58705A8804 /* Sources */,
+				A80349E35F518620BCB12544 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sorosoro;
+			packageProductDependencies = (
+			);
+			productName = Sorosoro;
+			productReference = B603132F2741123F3C30ABF0 /* Sorosoro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		523C3337F41B8BC3F3915563 /* SorosoroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA0831B3D203F85350BCFE0 /* Build configuration list for PBXNativeTarget "SorosoroTests" */;
+			buildPhases = (
+				8321D0124BCA2A0001D7DED6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A26DE5B6478BCAB249D870B6 /* PBXTargetDependency */,
+			);
+			name = SorosoroTests;
+			packageProductDependencies = (
+			);
+			productName = SorosoroTests;
+			productReference = FC8F04B947AE80C04202CBE6 /* SorosoroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF786D0E1FE32178926DAC3F /* SorosoroWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A042D8963582593CC4973F9 /* Build configuration list for PBXNativeTarget "SorosoroWatch" */;
+			buildPhases = (
+				E4905C98F5F85C37E1731C3B /* Sources */,
+				DE0ED30A9033178E4F130DD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SorosoroWatch;
+			packageProductDependencies = (
+			);
+			productName = SorosoroWatch;
+			productReference = ADB782C1F45A9499FDE6737A /* SorosoroWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9570778397E60C15929CB15E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					2CE760B095E7C9B65D6B954F = {
+						DevelopmentTeam = R7B3AEZ7TA;
+					};
+					523C3337F41B8BC3F3915563 = {
+						DevelopmentTeam = R7B3AEZ7TA;
+					};
+					CF786D0E1FE32178926DAC3F = {
+						DevelopmentTeam = R7B3AEZ7TA;
+					};
+				};
+			};
+			buildConfigurationList = D2B0F592D9BB376AB888289E /* Build configuration list for PBXProject "Sorosoro" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 18D281C9204979EB3137C88A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 463D564F3CE958F86523EF0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CE760B095E7C9B65D6B954F /* Sorosoro */,
+				523C3337F41B8BC3F3915563 /* SorosoroTests */,
+				CF786D0E1FE32178926DAC3F /* SorosoroWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A80349E35F518620BCB12544 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64C8646EB606A6252EA21D8 /* Assets.xcassets in Resources */,
+				D0657A50C0DD5E218CDE86B1 /* Sorosoro.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0ED30A9033178E4F130DD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD69B1059A8A40335CE8E6CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3975064BEBCE4B58705A8804 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1FF9E6122B4858751CF0A5 /* AppSettings.swift in Sources */,
+				236B7C89688FB2E03AE68066 /* CKRecord+Sorosoro.swift in Sources */,
+				85511BF7EE742E912EEB20E6 /* CloudKitService.swift in Sources */,
+				D1BA87246D07180699672E43 /* Constants.swift in Sources */,
+				A577DFD4091529AC6BDAFAF3 /* ContentView.swift in Sources */,
+				0FD4D6406BD5E48BD8B9C0BE /* DefaultTemplates.swift in Sources */,
+				9074E9AAAA3424C40979316B /* Item.swift in Sources */,
+				D703FD22759D7C213970274C /* ItemDetailView.swift in Sources */,
+				3EA56C10BAA6162396BEBC4A /* ItemFormView.swift in Sources */,
+				4F3152588B5606194B2BE801 /* ItemListView.swift in Sources */,
+				8739EB1E5027FA636DE9C560 /* ItemStore.swift in Sources */,
+				B59C7854E2DF4B707895F528 /* ItemTemplate.swift in Sources */,
+				6C10E939FD15AFFC9D77ADFC /* Mode.swift in Sources */,
+				0675518A7650E357F63E7FC6 /* NotificationService.swift in Sources */,
+				F07F3F9FC30E809BE1343976 /* OnboardingView.swift in Sources */,
+				0A8C3F34E5BC0422A7603AE4 /* PaywallView.swift in Sources */,
+				C8658DB557556E758DEF8CC6 /* PlanLimits.swift in Sources */,
+				45047DECD4B845A0314B64A4 /* PlanService.swift in Sources */,
+				2E825176BF24A29D7259F374 /* SettingsStore.swift in Sources */,
+				1D8EB834386552D4C62C022D /* SettingsView.swift in Sources */,
+				99BB4341BCA720925D5F7574 /* SharingView.swift in Sources */,
+				E31F36A363760C0BCACB73E1 /* ShoppingListEntry.swift in Sources */,
+				DF6BC334BA27FE8B2C7E6C70 /* ShoppingListStore.swift in Sources */,
+				97FE6BF8F3C2D841BCE83858 /* ShoppingListView.swift in Sources */,
+				CC38B06A94C6AAD19F2CBC6D /* SorosoroApp.swift in Sources */,
+				0F1FD94891CBE8B428CA8E05 /* SyncCoordinator.swift in Sources */,
+				731216FED0A7C79282C096F1 /* TemplatePickerView.swift in Sources */,
+				ECEA449052ABA67BF602E1BD /* TemplateStore.swift in Sources */,
+				F8FBA7EA3B56F7079F2BBE7A /* UserProfile.swift in Sources */,
+				8F01D027630744F3D90F2625 /* UserProfileStore.swift in Sources */,
+				090E71B4B13EACA6A51423E5 /* WatchSyncService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8321D0124BCA2A0001D7DED6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FADB33A965D2ECCC7CBE67B /* AppSettings.swift in Sources */,
+				F646802A9D86C9E0C72D912A /* CKRecord+Sorosoro.swift in Sources */,
+				69FD1304095A632DDF0E4BBA /* CloudKitService.swift in Sources */,
+				8D9909906E8CDBC100958304 /* Constants.swift in Sources */,
+				8B88EAC01945A72B021EC5EB /* DefaultTemplates.swift in Sources */,
+				7A62133222B49C329C943020 /* Item.swift in Sources */,
+				5CD672E30D98AB58C3A7D2AF /* ItemStore.swift in Sources */,
+				BEF83840B3093ABE94154944 /* ItemStoreTests.swift in Sources */,
+				8E1567DFF4289B0239735434 /* ItemTemplate.swift in Sources */,
+				94B126527D5E68BB5232647E /* Mode.swift in Sources */,
+				90763841093DD53B92C317D0 /* NotificationService.swift in Sources */,
+				D717F9ED461463DA1E288D36 /* PlanLimits.swift in Sources */,
+				E500103551420BCB99F3258E /* PlanService.swift in Sources */,
+				2017AC9853E9B99D9EF31F9E /* SettingsStore.swift in Sources */,
+				2E9523BE83848ADA798D87EE /* ShoppingListEntry.swift in Sources */,
+				BDC329979371D6FED3DB48D5 /* ShoppingListStore.swift in Sources */,
+				B97B4D2CC4B12E9D8C970B24 /* SyncCoordinator.swift in Sources */,
+				7FBBCAEE5C8953145E14AA5D /* TemplateStore.swift in Sources */,
+				3B761FE976627A0EBD1CF37C /* UserProfile.swift in Sources */,
+				C1C1D8C369BB990E0A444772 /* UserProfileStore.swift in Sources */,
+				F2F3EC11ACFD9F4EB256725A /* WatchSyncService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4905C98F5F85C37E1731C3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D90BE032A792E2749B017C /* AppSettings.swift in Sources */,
+				95DA4DD3EE6EB954299F1ED4 /* CKRecord+Sorosoro.swift in Sources */,
+				426C1F28B78EE249556DCFD5 /* CloudKitService.swift in Sources */,
+				5F0E7BEBE4431161E6BD422D /* Constants.swift in Sources */,
+				22B793D7E180DEADBE32F1E7 /* DefaultTemplates.swift in Sources */,
+				49C6540A51FE4D5F54FFEA1E /* Item.swift in Sources */,
+				9DF5D61968B0F7EFFEDE58A0 /* ItemStore.swift in Sources */,
+				211596E64D32420802C4561B /* ItemTemplate.swift in Sources */,
+				945E2DEA6AB3B0B139E6D0C8 /* Mode.swift in Sources */,
+				B7E9A8E16B6B74DA21E88D93 /* NotificationService.swift in Sources */,
+				E0CF6F80AB917921CA4F8C6B /* PlanLimits.swift in Sources */,
+				EBF75D1203BDFE4103D6B8DD /* PlanService.swift in Sources */,
+				9D4482A364C8E66745BE7758 /* SettingsStore.swift in Sources */,
+				BF5FDE85138A0D4C72CD074F /* ShoppingListEntry.swift in Sources */,
+				16232DAC182E8E793F37AD85 /* ShoppingListStore.swift in Sources */,
+				637DC4AFDA3DDC1D3A913A7D /* SorosoroWatchApp.swift in Sources */,
+				35E7268C2451EF9ED20BB7A1 /* SyncCoordinator.swift in Sources */,
+				5A491F3495EF1ACD903A9AC7 /* TemplateStore.swift in Sources */,
+				8DB171B768784A0FD9011A48 /* UserProfile.swift in Sources */,
+				30BE1BA9213545A64E959DC2 /* UserProfileStore.swift in Sources */,
+				102B4EF1A2FA32ABA903BA90 /* WatchHomeView.swift in Sources */,
+				0F2DA1FA4C64490801EB3937 /* WatchItemDetailView.swift in Sources */,
+				48A6D00DD1E971DF99ED7665 /* WatchItemListView.swift in Sources */,
+				488938083FCE3F604D78207C /* WatchShoppingListView.swift in Sources */,
+				975243D8DA61D24D2B36EA5A /* WatchSyncService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A26DE5B6478BCAB249D870B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CE760B095E7C9B65D6B954F /* Sorosoro */;
+			targetProxy = 5F4ABCCB5288B494DDAED927 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0118997907973FBC8FE6AEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = R7B3AEZ7TA;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		0DA8D4196A292AAF7BC479A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SorosoroWatch/SorosoroWatch.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mankai.sorosoro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mankai.sorosoro.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		3F187156716E1D2379CFCB91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SorosoroWatch/SorosoroWatch.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mankai.sorosoro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mankai.sorosoro.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		3FA7E35AA67FEBA68C552572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sorosoro/Sorosoro.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sorosoro/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mankai.sorosoro;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6506CD07D7F38A1629402C38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sorosoro/Sorosoro.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sorosoro/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mankai.sorosoro;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B16C2988D5E77600BDE42E10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mankai.sorosoro.SorosoroTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sorosoro.app/Sorosoro";
+			};
+			name = Debug;
+		};
+		D1684B309855C87FF1B729CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = R7B3AEZ7TA;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		FB8EADA45C75429F9FE34D4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mankai.sorosoro.SorosoroTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sorosoro.app/Sorosoro";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A042D8963582593CC4973F9 /* Build configuration list for PBXNativeTarget "SorosoroWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F187156716E1D2379CFCB91 /* Debug */,
+				0DA8D4196A292AAF7BC479A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2EA0831B3D203F85350BCFE0 /* Build configuration list for PBXNativeTarget "SorosoroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B16C2988D5E77600BDE42E10 /* Debug */,
+				FB8EADA45C75429F9FE34D4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		66EA074305FD3D2C19CB6635 /* Build configuration list for PBXNativeTarget "Sorosoro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6506CD07D7F38A1629402C38 /* Debug */,
+				3FA7E35AA67FEBA68C552572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D2B0F592D9BB376AB888289E /* Build configuration list for PBXProject "Sorosoro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1684B309855C87FF1B729CE /* Debug */,
+				0118997907973FBC8FE6AEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9570778397E60C15929CB15E /* Project object */;
+}

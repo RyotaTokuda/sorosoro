@@ -1,0 +1,117 @@
+{
+  "identifier" : "D8A1B2C3-E4F5-6789-ABCD-EF0123456789",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_interruptedPurchasesEnabled" : false,
+    "_locale" : "ja_JP",
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Entitlement Verification"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+      "localizations" : [
+
+      ],
+      "name" : "Sorosoro Plus",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "280",
+          "familySharable" : false,
+          "groupNumber" : 1,
+          "internalID" : "B1C2D3E4-F5A6-7890-ABCD-EF1234567891",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "全モード・アイテム無制限・通知無制限・カスタムテンプレート・全モード買い物リスト・メモ機能",
+              "displayName" : "そろそろ Plus 月額",
+              "locale" : "ja_JP"
+            }
+          ],
+          "productID" : "sorosoro.plus.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Plus Monthly",
+          "subscriptionGroupID" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2800",
+          "familySharable" : false,
+          "groupNumber" : 2,
+          "internalID" : "C1D2E3F4-A5B6-7890-ABCD-EF1234567892",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "全モード・アイテム無制限・通知無制限・カスタムテンプレート・全モード買い物リスト・メモ機能",
+              "displayName" : "そろそろ Plus 年額",
+              "locale" : "ja_JP"
+            }
+          ],
+          "productID" : "sorosoro.plus.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Plus Yearly",
+          "subscriptionGroupID" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
