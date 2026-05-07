@@ -62,14 +62,22 @@ struct SettingsView: View {
             if profileStore.profile.visibleModes.contains(.daily) {
                 Section("家族の人数") {
                     Stepper(
-                        "\(profileStore.profile.familySize)人",
+                        "大人: \(profileStore.profile.adultsCount)人",
                         value: Binding(
-                            get: { profileStore.profile.familySize },
-                            set: { profileStore.setFamilySize($0) }
+                            get: { profileStore.profile.adultsCount },
+                            set: { profileStore.setAdultsCount($0) }
                         ),
-                        in: 1...8
+                        in: 1...6
                     )
-                    Text("日用品の消耗ペースを人数に合わせて調整します")
+                    Stepper(
+                        "子供（中学生以下）: \(profileStore.profile.childrenCount)人",
+                        value: Binding(
+                            get: { profileStore.profile.childrenCount },
+                            set: { profileStore.setChildrenCount($0) }
+                        ),
+                        in: 0...6
+                    )
+                    Text("子供は大人の約60%として計算。日用品の補充タイミングに反映されます")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

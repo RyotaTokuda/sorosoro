@@ -16,8 +16,13 @@ final class UserProfileStore {
         save()
     }
 
-    func setFamilySize(_ size: Int) {
-        profile.familySize = max(1, size)
+    func setAdultsCount(_ count: Int) {
+        profile.adultsCount = max(1, count)
+        save()
+    }
+
+    func setChildrenCount(_ count: Int) {
+        profile.childrenCount = max(0, count)
         save()
     }
 
@@ -33,12 +38,14 @@ final class UserProfileStore {
 
     func completeOnboarding(
         visibleModes: [Mode],
-        familySize: Int,
+        adultsCount: Int,
+        childrenCount: Int,
         monthlyMileage: MonthlyMileage,
         vehicleType: VehicleType
     ) {
         profile.visibleModes = visibleModes.isEmpty ? [.daily] : visibleModes
-        profile.familySize = max(1, familySize)
+        profile.adultsCount = max(1, adultsCount)
+        profile.childrenCount = max(0, childrenCount)
         profile.monthlyMileage = monthlyMileage
         profile.vehicleType = vehicleType
         profile.hasCompletedOnboarding = true

@@ -31,7 +31,7 @@ struct ItemTemplate: Codable, Identifiable {
     func adjustedCycleDays(profile: UserProfile) -> Int {
         switch mode {
         case .daily:
-            let factor = dailyFamilyFactor(profile.familySize)
+            let factor = profile.effectiveFamilyFactor
             return max(7, Int(Double(cycleDays) / factor))
         case .car:
             if let kmBase = distanceKmBase {
@@ -41,18 +41,6 @@ struct ItemTemplate: Codable, Identifiable {
             return cycleDays
         case .gadget:
             return cycleDays
-        }
-    }
-
-    // Consumption factor relative to a 2-person household baseline
-    private func dailyFamilyFactor(_ size: Int) -> Double {
-        switch size {
-        case 1:  return 0.6
-        case 2:  return 1.0
-        case 3:  return 1.4
-        case 4:  return 1.8
-        case 5:  return 2.2
-        default: return 2.6
         }
     }
 }
