@@ -1,4 +1,6 @@
-# Sorosoro — 消耗品管理アプリ
+# CLAUDE.md — そろそろ / Sorosoro
+
+> ルール全体 → `/Users/ryotatokuda/side_job/CLAUDE.md`（必ず先に読む）
 
 ## 概要
 「そろそろ買い替え時」をローカル通知で知らせる消耗品管理アプリ。
