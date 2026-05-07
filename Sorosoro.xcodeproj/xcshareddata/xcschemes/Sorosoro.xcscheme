@@ -21,6 +21,20 @@
                ReferencedContainer = "container:Sorosoro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CF786D0E1FE32178926DAC3F"
+               BuildableName = "SorosoroWatch.app"
+               BlueprintName = "SorosoroWatch"
+               ReferencedContainer = "container:Sorosoro.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -72,7 +72,7 @@
           "localizations" : [
             {
               "description" : "全モード・アイテム無制限・通知無制限・カスタムテンプレート・全モード買い物リスト・メモ機能",
-              "displayName" : "そろそろ Plus 月額",
+              "displayName" : "買いどき Plus 月額",
               "locale" : "ja_JP"
             }
           ],
@@ -97,7 +97,7 @@
           "localizations" : [
             {
               "description" : "全モード・アイテム無制限・通知無制限・カスタムテンプレート・全モード買い物リスト・メモ機能",
-              "displayName" : "そろそろ Plus 年額",
+              "displayName" : "買いどき Plus 年額",
               "locale" : "ja_JP"
             }
           ],

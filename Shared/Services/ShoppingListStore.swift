@@ -121,6 +121,8 @@ final class ShoppingListStore {
 
     // MARK: - JSON Cache
 
+    func reload() { loadCache() }
+
     private func loadCache() {
         guard FileManager.default.fileExists(atPath: cacheURL.path),
               let data = try? Data(contentsOf: cacheURL) else { return }

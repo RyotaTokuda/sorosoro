@@ -10,8 +10,9 @@ settings:
   base:
     SWIFT_VERSION: "5.9"
     MARKETING_VERSION: "1.0.0"
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "2"
     DEVELOPMENT_TEAM: "R7B3AEZ7TA"
+    CODE_SIGN_STYLE: Automatic
 targets:
   Sorosoro:
     type: application
@@ -31,6 +32,10 @@ targets:
         SWIFT_VERSION: "5.9"
     resources:
       - path: Sorosoro/Resources
+    dependencies:
+      - target: SorosoroWatch
+        embed: true
+        link: false
     entitlements:
       path: Sorosoro/Sorosoro.entitlements
       properties:
@@ -76,6 +81,7 @@ schemes:
     build:
       targets:
         Sorosoro: all
+        SorosoroWatch: all
     run:
       config: Debug
       storeKitConfiguration: Sorosoro/Resources/Sorosoro.storekit

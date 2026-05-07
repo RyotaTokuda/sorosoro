@@ -81,6 +81,7 @@
 		E0CF6F80AB917921CA4F8C6B /* PlanLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83486DF54373B39B163DC9B /* PlanLimits.swift */; };
 		E31F36A363760C0BCACB73E1 /* ShoppingListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */; };
 		E500103551420BCB99F3258E /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCAB353080B6F8EDBB4A886 /* PlanService.swift */; };
+		E7F0CF8419093919A796E1A3 /* SorosoroWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ADB782C1F45A9499FDE6737A /* SorosoroWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EBF75D1203BDFE4103D6B8DD /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCAB353080B6F8EDBB4A886 /* PlanService.swift */; };
 		ECEA449052ABA67BF602E1BD /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */; };
 		F07F3F9FC30E809BE1343976 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD6EB2474E5B58D60D57203 /* OnboardingView.swift */; };
@@ -97,7 +98,28 @@
 			remoteGlobalIDString = 2CE760B095E7C9B65D6B954F;
 			remoteInfo = Sorosoro;
 		};
+		A3C8AD07C2FE000556BA2366 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9570778397E60C15929CB15E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF786D0E1FE32178926DAC3F;
+			remoteInfo = SorosoroWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		840A28A01BF69BA313AAFEA4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E7F0CF8419093919A796E1A3 /* SorosoroWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0679B21D79E5A712A74C7A9B /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
@@ -236,7 +258,6 @@
 				ADD0CDCE3E0BDE5A11F6969D /* Sorosoro.entitlements */,
 				99946B3990D677949A9518CC /* App */,
 				C249D933651B7F1AF00F08F1 /* Resources */,
-				D523E4BEF73FBE295EE1440F /* ViewModels */,
 				5CE8A277C657DC2E8E57E014 /* Views */,
 			);
 			path = Sorosoro;
@@ -287,13 +308,6 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		D523E4BEF73FBE295EE1440F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		D8BA3BFA01838EE14A0C7DC5 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,10 +344,12 @@
 			buildPhases = (
 				3975064BEBCE4B58705A8804 /* Sources */,
 				A80349E35F518620BCB12544 /* Resources */,
+				840A28A01BF69BA313AAFEA4 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				80A6CFD78FFC35DEA6D811E5 /* PBXTargetDependency */,
 			);
 			name = Sorosoro;
 			packageProductDependencies = (
@@ -389,12 +405,15 @@
 				TargetAttributes = {
 					2CE760B095E7C9B65D6B954F = {
 						DevelopmentTeam = R7B3AEZ7TA;
+						ProvisioningStyle = Automatic;
 					};
 					523C3337F41B8BC3F3915563 = {
 						DevelopmentTeam = R7B3AEZ7TA;
+						ProvisioningStyle = Automatic;
 					};
 					CF786D0E1FE32178926DAC3F = {
 						DevelopmentTeam = R7B3AEZ7TA;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -541,6 +560,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		80A6CFD78FFC35DEA6D811E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF786D0E1FE32178926DAC3F /* SorosoroWatch */;
+			targetProxy = A3C8AD07C2FE000556BA2366 /* PBXContainerItemProxy */;
+		};
 		A26DE5B6478BCAB249D870B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2CE760B095E7C9B65D6B954F /* Sorosoro */;
@@ -582,8 +606,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = R7B3AEZ7TA;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -731,8 +756,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = R7B3AEZ7TA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

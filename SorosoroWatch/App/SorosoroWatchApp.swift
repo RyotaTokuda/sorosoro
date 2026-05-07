@@ -15,8 +15,8 @@ struct SorosoroWatchApp: App {
                 .environment(shoppingListStore)
                 .environment(settingsStore)
                 .environment(planService)
-                .onChange(of: scenePhase) { _, newPhase in
-                    if newPhase == .active {
+                .onChange(of: scenePhase) {
+                    if scenePhase == .active {
                         itemStore.reload()
                         shoppingListStore.reload()
                         Task { await planService.updatePurchaseStatus() }
