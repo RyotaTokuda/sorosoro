@@ -188,8 +188,12 @@ struct PaywallView: View {
     private var footerSection: some View {
         VStack(spacing: 10) {
             HStack(spacing: 24) {
-                Link("利用規約", destination: URL(string: "https://mankai-software.com/terms")!)
-                Link("プライバシーポリシー", destination: URL(string: "https://mankai-software.com/privacy")!)
+                if let termsURL = URL(string: "https://mankai-software.com/terms") {
+                    Link("利用規約", destination: termsURL)
+                }
+                if let privacyURL = URL(string: "https://mankai-software.com/privacy") {
+                    Link("プライバシーポリシー", destination: privacyURL)
+                }
             }
             .font(.caption)
             .foregroundStyle(.secondary)

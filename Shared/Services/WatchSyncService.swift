@@ -8,11 +8,9 @@ final class WatchSyncService: NSObject, WCSessionDelegate {
 
     private(set) var isReachable = false
 
-    /// アイテム更新（追加・編集・買った！）が届いた時のコールバック
     var onItemUpdated: ((Item) -> Void)?
-    /// アイテム削除が届いた時のコールバック
     var onItemDeleted: ((UUID) -> Void)?
-    /// 買い物リスト変更が届いた時のコールバック
+    var onItemPurchased: ((UUID) -> Void)?
     var onShoppingListChanged: (() -> Void)?
 
     private override init() {
@@ -94,10 +92,7 @@ final class WatchSyncService: NSObject, WCSessionDelegate {
             guard let idString = userInfo["id"] as? String,
                   let id = UUID(uuidString: idString) else { return }
             DispatchQueue.main.async { [weak self] in
-                self?.onItemUpdated.map { _ in }
-                // markPurchased はアイテム更新として処理
-                // Store側でreloadすることで反映
-                self?.onShoppingListChanged?()
+                self?.onItemPurchased?(id)
             }
 
         default:

@@ -65,8 +65,8 @@ enum NotificationService {
         }
 
         let content = UNMutableNotificationContent()
-        content.title = "そろそろ\(item.name)"
-        content.body = "\(item.name)の交換時期が近づいています（あと\(item.daysRemaining)日）"
+        content.title = "\(item.name)の交換時期です"
+        content.body = "交換時期まであと\(item.notificationDaysBefore)日です"
         content.sound = .default
         content.categoryIdentifier = AppConstants.notificationCategoryID
 

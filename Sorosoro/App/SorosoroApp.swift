@@ -80,6 +80,13 @@ struct SorosoroApp: App {
             itemStore.deleteItem(id: id)
             shoppingListStore.removeEntries(for: id)
         }
+        sync.onItemPurchased = { [itemStore, shoppingListStore] id in
+            itemStore.markPurchased(id: id)
+            shoppingListStore.removeEntries(for: id)
+            if let updated = itemStore.item(by: id) {
+                NotificationService.scheduleNotification(for: updated)
+            }
+        }
         sync.onShoppingListChanged = { [syncCoordinator] in
             Task { await syncCoordinator.syncAll() }
         }

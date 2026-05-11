@@ -1,524 +1,196 @@
-# Sorosoro - 消耗品管理アプリ 仕様書
+# 買いどき — 機能仕様書
 
-> 「なくなる前に気づく」「交換時期を忘れない」に特化した消耗品管理アプリ
-
----
-
-## 概要
-
-日用品・車・ガジェットなど、定期的に交換・補充が必要なアイテムの管理アプリ。
-前回購入日と交換周期から「そろそろ買い替え時」をローカル通知で知らせる。
+> 最終更新: 2026-05-12  
+> 対象バージョン: 1.0.0 (Build 3)
 
 ---
 
-## Phase 1: iOS MVP（Swift / SwiftUI）
+## 1. アプリ概要
 
-### 1-1. モード切替
+消耗品の交換・買い替えタイミングを自動計算し通知する管理アプリ。  
+iOS / watchOS 対応。CloudKit による家族共有機能付き。
 
-| モード | アイコン | カラー | 代表アイテム例 |
-|--------|----------|--------|----------------|
-| 日用品 | house.fill | .blue | シャンプー、洗剤、ラップ、歯ブラシ |
-| 車 | car.fill | .green | エンジンオイル、タイヤ、ワイパー、バッテリー |
-| ガジェット | desktopcomputer | .purple | 電池、フィルター、インクカートリッジ |
+---
 
-- TabView でモード切替（各タブに独立したアイテムリスト）
-- 無料プラン: 1モードのみ利用可能（初回起動時に選択）
-- 有料プラン: 全モード解放
+## 2. モード
 
-### 1-2. アイテム CRUD
+| モード | 内容 | 無料プラン |
+|--------|------|-----------|
+| 日用品 | シャンプー・洗剤・電池など生活消耗品 | 1モードのみ使用可 |
+| カー用品 | エンジンオイル・タイヤ・ワイパーなど | Pro のみ |
+| gadget | 内部定義のみ、UI では daily に統合 | — |
 
-#### データモデル: `Item`
+`Mode.allCases` は `[.daily, .car]` のみ返す。  
+`gadget` アイテムは `effectiveMode` により `daily` として表示される。
 
-```swift
-struct Item: Codable, Identifiable {
-    var id: UUID
-    var name: String                    // アイテム名
-    var mode: Mode                      // 所属モード
-    var cycleDays: Int                  // 交換周期（日数）
-    var lastPurchaseDate: Date          // 前回購入日
-    var nextDueDate: Date               // 次回予定日（computed も可だが通知用に保持）
-    var memo: String                    // メモ（任意）
-    var notificationEnabled: Bool       // 通知ON/OFF
-    var notificationDaysBefore: Int     // 何日前に通知するか（デフォルト: 3）
-    var createdAt: Date
-    var updatedAt: Date
-}
+---
+
+## 3. データモデル
+
+### 3-1. Item
+
+| フィールド | 型 | 説明 |
+|---|---|---|
+| id | UUID | 主キー |
+| name | String | アイテム名 |
+| mode | Mode | 所属モード |
+| cycleDays | Int | 交換周期（日） |
+| lastPurchaseDate | Date | 最終購入日 |
+| nextDueDate | Date | 次回交換推奨日（lastPurchaseDate + cycleDays） |
+| memo | String | メモ（Pro のみ表示・編集可） |
+| notificationEnabled | Bool | 通知 ON/OFF |
+| notificationDaysBefore | Int | 何日前に通知するか（1〜30） |
+| purchaseHistory | [Date] | 購入履歴（最大20件） |
+| isShared | Bool | 共有ゾーンのアイテムか（transient、JSON保存対象外） |
+
+**計算プロパティ:**
+- `daysRemaining: Int` = `nextDueDate - today`（負=超過）
+- `status: ItemStatus` = overdue（< 0）/ soon（0〜6）/ ok（7〜）
+
+**サイクル自動最適化:**
+- `suggestedCycleDays() -> Int?`
+- 購入履歴が3件以上あり、平均間隔と現在の cycleDays の差が5日以上の場合に提案値を返す
+
+### 3-2. ShoppingListEntry
+
+| フィールド | 型 | 説明 |
+|---|---|---|
+| id | UUID | 主キー |
+| itemId | UUID | 紐付くアイテムの ID |
+| addedAt | Date | 追加日時 |
+| isChecked | Bool | チェック済みか |
+| checkedAt | Date? | チェック日時 |
+| isShared | Bool | 共有フラグ（transient） |
+
+### 3-3. UserProfile
+
+| フィールド | 型 | 説明 |
+|---|---|---|
+| visibleModes | [Mode] | タブバーに表示するモード |
+| adultsCount | Int | 大人の人数 |
+| childrenCount | Int | 子どもの人数 |
+| monthlyMileage | MonthlyMileage | 月間走行距離（low/medium/high） |
+| vehicleType | VehicleType | 車種（gasoline/diesel/hev/ev） |
+| hasCompletedOnboarding | Bool | オンボーディング完了フラグ |
+
+**effectiveFamilyFactor:**
 ```
-
-#### 画面構成
-
-| 画面 | 説明 |
-|------|------|
-| ItemListView | モード別アイテム一覧。残日数でソート。期限切れは赤表示 |
-| ItemDetailView | アイテム詳細・編集。「買った！」ボタンで前回購入日を今日に更新 |
-| ItemFormView | 新規追加 / 編集フォーム |
-
-#### 一覧表示の状態
-
-| 状態 | 条件 | 表示 |
-|------|------|------|
-| 期限切れ | nextDueDate < today | 赤背景 + 「○日超過」 |
-| そろそろ | nextDueDate - today <= notificationDaysBefore | オレンジ + 「あと○日」 |
-| まだ大丈夫 | それ以外 | 通常 + 「あと○日」 |
-
-#### 「買った！」アクション
-
-- `lastPurchaseDate = Date.now`
-- `nextDueDate = Date.now + cycleDays`
-- 通知を再スケジュール
-- 確認ダイアログ付き（誤タップ防止）
-
-### 1-3. テンプレート登録
-
-#### データモデル: `ItemTemplate`
-
-```swift
-struct ItemTemplate: Codable, Identifiable {
-    var id: UUID
-    var name: String
-    var mode: Mode
-    var cycleDays: Int
-    var notificationDaysBefore: Int
-    var isDefault: Bool                 // プリインストール or ユーザー作成
-}
+(adultsCount + childrenCount × 0.6) / 2.0
 ```
+日用品の交換周期をこの係数で割ることで家族人数に応じた周期に調整する。
 
-#### プリインストールテンプレート
+---
 
-**日用品モード:**
-| 名前 | 周期（日） |
-|------|-----------|
-| シャンプー | 60 |
-| コンディショナー | 60 |
-| ボディソープ | 45 |
-| 歯ブラシ | 30 |
-| 歯磨き粉 | 60 |
-| 食器用洗剤 | 30 |
-| 洗濯洗剤 | 30 |
-| 柔軟剤 | 45 |
-| ラップ | 30 |
-| アルミホイル | 60 |
-| トイレットペーパー | 14 |
-| ティッシュペーパー | 14 |
-| キッチンスポンジ | 30 |
-| ハンドソープ | 30 |
-| 浄水器カートリッジ | 90 |
-
-**車モード:**
-| 名前 | 周期（日） |
-|------|-----------|
-| エンジンオイル | 180 |
-| オイルフィルター | 365 |
-| ワイパーゴム | 365 |
-| エアコンフィルター | 365 |
-| タイヤ（交換目安） | 1095 |
-| バッテリー | 730 |
-| ウォッシャー液 | 90 |
-| ブレーキパッド | 1460 |
-
-**ガジェットモード:**
-| 名前 | 周期（日） |
-|------|-----------|
-| 乾電池（リモコン等） | 180 |
-| プリンターインク | 90 |
-| エアコンフィルター | 90 |
-| 空気清浄機フィルター | 365 |
-| 掃除機フィルター | 180 |
-| 電動歯ブラシ替えブラシ | 90 |
-| シェーバー替刃 | 365 |
-
-#### テンプレートからの追加フロー
-
-1. 「テンプレートから追加」ボタンタップ
-2. 現在のモードに対応するテンプレート一覧表示
-3. 選択 → ItemFormView にプリセット値を埋めた状態で遷移
-4. ユーザーが周期等を調整 → 保存
-
-#### カスタムテンプレート（有料機能）
-
-- ユーザーが自分のテンプレートを作成・保存
-- 既存アイテムから「テンプレートとして保存」
-
-### 1-4. 買い物リスト
-
-#### 機能
-
-- 期限切れ + そろそろ のアイテムを自動抽出
-- 手動で「買い物リストに追加」も可能
-- チェックボックスで購入済みマーク → 「買った！」処理と連動
-- モード横断で表示（全モードのアイテムを一覧）
-
-#### データモデル: `ShoppingListEntry`
-
-```swift
-struct ShoppingListEntry: Codable, Identifiable {
-    var id: UUID
-    var itemId: UUID                    // 紐づく Item
-    var addedAt: Date
-    var isChecked: Bool
-    var checkedAt: Date?
-}
-```
-
-#### 画面
-
-| 画面 | 説明 |
-|------|------|
-| ShoppingListView | 買い物リスト。未チェック→チェック済みの順で表示 |
-
-- チェック時: 確認ダイアログ → Item の「買った！」処理を実行 → リストから除外
-- 無料プラン: 選択中の1モードのみ表示
-- 有料プラン: 全モード横断表示
-
-### 1-5. ローカル通知
-
-#### 通知タイミング
-
-- `nextDueDate - notificationDaysBefore` の朝9:00にスケジュール
-- アイテムごとに個別の通知ID（`item.id.uuidString`）
-
-#### 通知内容
-
-```
-タイトル: そろそろ○○
-本文: ○○の交換時期が近づいています（あと○日）
-カテゴリ: SOROSORO_REMINDER
-```
-
-#### 通知アクション
-
-| アクション | 説明 |
-|------------|------|
-| 「買った！」 | 通知から直接購入完了処理 |
-| 「あとで」 | 通知を消すのみ |
-
-#### 制限
-
-- 無料: 通知は最大5アイテムまで
-- 有料: 無制限
-- iOS上限（64件）を超える場合は次回予定日が近い順に優先
-
-### 1-6. データ保存
-
-#### 方式: JSON + App Group（既存アプリと同パターン）
-
-- `group.com.mankai.sorosoro` App Group
-- ファイル:
-  - `items.json` — Item 配列
-  - `shopping_list.json` — ShoppingListEntry 配列
-  - `custom_templates.json` — ユーザー作成テンプレート
-  - `settings.json` — アプリ設定（選択中モード等）
-
-#### Store クラス
-
-```swift
-class ItemStore: ObservableObject {
-    @Published var items: [Item] = []
-    // Atomic write（shimedoki パターン）
-    // Phase 2 で App Group 経由 watchOS 共有
-}
-```
-
-### 1-7. StoreKit 2 サブスク
-
-#### プラン構成
-
-| プラン | 価格 | Product ID |
-|--------|------|------------|
-| 無料 | ¥0 | — |
-| Plus 月額 | ¥280/月 | sorosoro.plus.monthly |
-| Plus 年額 | ¥2,800/年 | sorosoro.plus.yearly |
-
-#### 無料 vs Plus 制限
+## 4. プラン制限
 
 | 機能 | 無料 | Plus |
-|------|------|------|
-| 利用モード数 | 1モード | 全モード |
-| アイテム登録数 | 10件/モード | 無制限 |
-| 通知アイテム数 | 5件 | 無制限 |
+|---|---|---|
+| アイテム登録数（モード別） | 10件 | 無制限 |
+| 通知件数 | 5件 | 64件（iOS上限） |
+| モード同時利用 | 1モードのみ | 全モード |
 | カスタムテンプレート | 不可 | 可 |
-| 買い物リスト表示 | 選択モードのみ | 全モード横断 |
-| アイテムメモ | 不可 | 可 |
+| メモ機能 | 不可 | 可 |
+| 買い物リスト全モード表示 | 不可（選択モードのみ） | 可 |
+| CloudKit 家族共有 | 不可 | 可 |
 
-#### 実装パターン
-
-- `PlanService`（shimedoki パターン踏襲）
-- `isPro` で判定
-- Paywall トリガー: モード切替時 / 登録上限到達時 / カスタムテンプレート作成時
-
-### 1-8. アプリ設定
-
-| 項目 | 説明 |
-|------|------|
-| 選択中モード | 無料ユーザーのアクティブモード |
-| 通知 ON/OFF（全体） | 通知の一括制御 |
-| デフォルト通知日数 | 新規アイテムの通知デフォルト（初期値: 3日前） |
+**制限チェック実装箇所:**
+- アイテム追加: `ItemListView` ツールバーで `planService.canAddItem(currentCount:)` をチェック
+- テンプレート作成: `TemplatePickerView` の「カスタム追加」ボタン
+- メモ: `ItemFormView` の memo フィールド
+- 共有: `SharingView` の ShareButton
 
 ---
 
-## Phase 2: watchOS Companion App
+## 5. プリセットテンプレート
 
-### 2-1. 概要
+### 日用品（21件）
+シャンプー(60d)、コンディショナー(60d)、ボディソープ(30d)、ハンドソープ(30d)、歯ブラシ(30d)、歯磨き粉(60d)、トイレットペーパー(14d)、洗濯洗剤(30d)、食器用洗剤(30d)、柔軟剤(30d)、キッチンペーパー(14d)、ラップ(30d)、スポンジ(30d)、電池(365d)、空気清浄機フィルター(365d)、冷蔵庫フィルター(180d)、コーヒーフィルター(30d)、生ゴミ袋(14d)、マスク(14d)、綿棒(60d)、ティッシュ(14d)
 
-- iPhone 側で登録したアイテムを watchOS で確認
-- 「買った！」をWatch側から実行可能
-- 買い物リストの閲覧・チェック
+### カー用品（8件）
+エンジンオイル(180d/5,000km)、エアフィルター(365d/15,000km)、ワイパー(365d/20,000km)、ブレーキパッド(730d/30,000km)、バッテリー(1,095d/45,000km)、タイヤ(1,095d/50,000km)、タイヤローテーション(180d/5,000km)、クーラント(730d/40,000km)
 
-### 2-2. Watch 画面構成
-
-| 画面 | 説明 |
-|------|------|
-| WatchHomeView | 「そろそろ」「期限切れ」アイテムのサマリー |
-| WatchItemListView | モード別アイテム一覧（残日数表示） |
-| WatchShoppingListView | 買い物リスト（チェック可） |
-
-### 2-3. データ同期
-
-- App Group 共有ストレージ（ベース）
-- WatchConnectivity（`WCSession`）でリアルタイム同期
-  - iPhone → Watch: `transferUserInfo` でアイテム更新を送信
-  - Watch → iPhone: 「買った！」を `sendMessage` で送信
-- itami-techo の `WatchSyncService` パターン踏襲
-
-### 2-4. Complication / Widget
-
-- WidgetKit 対応
-- 「次にそろそろなアイテム」を表示
-- accessoryCircular: 残日数
-- accessoryRectangular: アイテム名 + 残日数
-
-### 2-5. 触覚通知
-
-- 「そろそろ」アイテムの通知を Watch の触覚フィードバックで通知
-- しめどき の WatchHapticService パターン踏襲
+**周期調整ロジック:**
+- 日用品: `cycleDays / effectiveFamilyFactor`（最小7日）
+- カー用品: `min(日数基準, 走行距離ベース日数)` で短い方を採用
 
 ---
 
-## Phase 3: Android（Kotlin / Jetpack Compose）
+## 6. 通知
 
-### 3-1. 概要
-
-- iOS 版の機能をそのまま Kotlin/Jetpack Compose で再実装
-- Android Studio エミュレータでデバッグ（実機なし）
-
-### 3-2. 技術スタック
-
-| 要素 | 技術 |
-|------|------|
-| UI | Jetpack Compose |
-| データ保存 | Room（SQLite） |
-| 通知 | AlarmManager + NotificationCompat |
-| 課金 | Google Play Billing Library v7 |
-| DI | Hilt |
-| アーキテクチャ | MVVM + Repository |
-
-### 3-3. データモデル（Room Entity）
-
-```kotlin
-@Entity(tableName = "items")
-data class Item(
-    @PrimaryKey val id: String,         // UUID
-    val name: String,
-    val mode: String,                   // "daily" | "car" | "gadget"
-    val cycleDays: Int,
-    val lastPurchaseDate: Long,         // epoch millis
-    val nextDueDate: Long,
-    val memo: String,
-    val notificationEnabled: Boolean,
-    val notificationDaysBefore: Int,
-    val createdAt: Long,
-    val updatedAt: Long
-)
-```
-
-### 3-4. 画面構成
-
-iOS版と同等:
-
-| 画面 | Composable |
-|------|-----------|
-| モード別一覧 | ItemListScreen |
-| アイテム詳細 | ItemDetailScreen |
-| 追加・編集 | ItemFormScreen |
-| テンプレート選択 | TemplatePickerScreen |
-| 買い物リスト | ShoppingListScreen |
-| 設定 | SettingsScreen |
-| Paywall | PaywallScreen |
-
-### 3-5. 通知
-
-- `AlarmManager.setExactAndAllowWhileIdle()` で正確なスケジュール
-- `NotificationChannel`: `sorosoro_reminder`
-- Android 13+ の通知パーミッション対応（`POST_NOTIFICATIONS`）
-
-### 3-6. 課金
-
-| プラン | Google Play Product ID |
-|--------|----------------------|
-| Plus 月額 | sorosoro.plus.monthly |
-| Plus 年額 | sorosoro.plus.yearly |
-
-- `BillingClient` + `ProductDetails` + `launchBillingFlow`
-- `Purchase.PurchaseState.PURCHASED` で Pro 解放
-- iOS 版と同一の制限テーブル適用
-
-### 3-7. Android 固有の考慮事項
-
-- バックグラウンド制限: `WorkManager` でバックアップ通知スケジュール
-- Doze モード: `setExactAndAllowWhileIdle` で対応
-- 画面回転: Compose の state hoisting で自動対応
-- Material 3 / Dynamic Color 対応
-- Edge-to-edge display 対応
+- スケジュール: `nextDueDate の notificationDaysBefore 日前の朝9時`
+- タイトル: `{item.name}の交換時期です`
+- 本文: `交換時期まであと{notificationDaysBefore}日です`
+- 過去日付はスキップ（次回「買った！」後に再スケジュール）
+- アプリがアクティブになるたびに全通知を再スケジュール
+- 無料: 残日数が近い上位5件のみ / Plus: 上位64件
 
 ---
 
-## プロジェクト構成
+## 7. データ永続化
 
-### ディレクトリ構造（Phase 1 + Phase 2）
+### JSON キャッシュ（App Group: group.com.mankai.sorosoro）
+| ファイル | 内容 |
+|---|---|
+| items.json | ItemStore |
+| shopping_list.json | ShoppingListStore |
+| custom_templates.json | TemplateStore |
+| settings.json | AppSettings / UserProfile |
 
-```
-sorosoro/
-├── SPEC.md                          # この仕様書
-├── CLAUDE.md                        # Claude Code 向けガイド
-├── project.yml                      # xcodegen 設定
-├── Shared/
-│   ├── Models/
-│   │   ├── Item.swift
-│   │   ├── Mode.swift
-│   │   ├── ItemTemplate.swift
-│   │   ├── ShoppingListEntry.swift
-│   │   ├── AppSettings.swift
-│   │   └── PlanLimits.swift
-│   ├── Services/
-│   │   ├── ItemStore.swift
-│   │   ├── ShoppingListStore.swift
-│   │   ├── TemplateStore.swift
-│   │   ├── NotificationService.swift
-│   │   ├── PlanService.swift
-│   │   └── WatchSyncService.swift   # Phase 2
-│   ├── Templates/
-│   │   └── DefaultTemplates.swift
-│   └── Constants.swift
-├── Sorosoro/                        # iOS target
-│   ├── App/
-│   │   └── SorosoroApp.swift
-│   ├── Views/
-│   │   ├── ContentView.swift
-│   │   ├── ItemListView.swift
-│   │   ├── ItemDetailView.swift
-│   │   ├── ItemFormView.swift
-│   │   ├── TemplatePickerView.swift
-│   │   ├── ShoppingListView.swift
-│   │   ├── SettingsView.swift
-│   │   └── PaywallView.swift
-│   ├── ViewModels/
-│   │   ├── ItemListViewModel.swift
-│   │   └── ShoppingListViewModel.swift
-│   └── Resources/
-│       └── Assets.xcassets/
-├── SorosoroWatch/                   # watchOS target (Phase 2)
-│   ├── App/
-│   │   └── SorosoroWatchApp.swift
-│   ├── Views/
-│   └── Resources/
-├── SorosoroTests/
-│   └── ItemStoreTests.swift
-└── android/                         # Phase 3
-    └── (Kotlin project)
-```
+共有アイテム（isShared = true）は JSON に保存しない（CloudKit から再取得）。
 
-### Bundle ID
-
-- iOS: `com.mankai.sorosoro`
-- watchOS: `com.mankai.sorosoro.watch`
-- Android: `com.mankai.sorosoro`
-- App Group: `group.com.mankai.sorosoro`
-
-### xcodegen 設定
-
-- iOS deployment target: 17.0
-- watchOS deployment target: 10.0
-- Swift version: 5.9
-- Team: R7B3AEZ7TA
+### CloudKit（iCloud.com.mankai.sorosoro）
+- プライベート DB: 自分のデータ
+- 共有 DB: 家族共有データ
+- デルタ同期: serverChangeToken を UserDefaults に永続化
+- レコード種別: Item / ShoppingListEntry / CustomTemplate
 
 ---
 
-## UI / UX ガイドライン
+## 8. Watch 連携
 
-### カラーパレット
+### WatchConnectivity（リアルタイム）
+| メッセージ type | 方向 | ペイロード |
+|---|---|---|
+| updateItem | 双方向 | Item を JSON エンコード |
+| deleteItem | 双方向 | UUID |
+| markPurchased | Watch → iPhone | UUID |
 
-- Primary: システムブルー（日用品モードカラーと兼用）
-- 各モードカラー: 上記テーブル参照
-- 期限切れ: .red
-- そろそろ: .orange
-- 大丈夫: .green（進捗バー）
-
-### アイコン
-
-- AppIcon: 家のシルエット + リマインダーベル（or タイマー的な要素）
-- SF Symbols 活用: clock.arrow.circlepath, bell.fill, cart.fill, checkmark.circle.fill
-
-### ナビゲーション
-
-```
-TabView
-├── [モード1] ItemListView
-├── [モード2] ItemListView（Plus のみ）
-├── [モード3] ItemListView（Plus のみ）
-├── 買い物リスト ShoppingListView
-└── 設定 SettingsView
-```
-
-### ダークモード
-
-- 完全対応（SwiftUI デフォルト + Asset Catalog）
+### Watch アプリ動作
+- App Group JSON キャッシュを直接読み書き（iPhone と共有）
+- CloudKit アクセスなし（iPhone 経由でのみ反映）
+- 「買った！」: ローカル更新 → WatchConnectivity で iPhone に通知 → iPhone が CloudKit に反映
 
 ---
 
-## マイルストーン
+## 9. iOS 画面一覧
 
-### Phase 1（iOS MVP） — 目標: 2〜3週間
+| 画面 | 役割 |
+|---|---|
+| ContentView | ZStack カスタムタブバー。オンボーディング未完了時は fullScreenCover |
+| OnboardingView | 3ページ: ウェルカム / モード選択 / 家族構成+車設定 |
+| ItemListView | アイテム一覧（残日数順）。追加・削除・ペイウォール制御 |
+| ItemDetailView | 詳細。最適化提案・「買った！」・買い物リスト追加・編集 |
+| ItemFormView | 新規作成・編集フォーム |
+| ShoppingListView | 緊急候補 / 未チェック / 購入済みの3セクション |
+| TemplatePickerView | プリセット + カスタムテンプレート一覧 |
+| PaywallView | 機能比較・プラン選択・購入・復元 |
+| SettingsView | プラン・モード・家族構成・通知・共有・バージョン |
 
-| # | タスク | 優先度 |
-|---|--------|--------|
-| 1 | プロジェクト初期化（xcodegen, Assets, 基本構造） | P0 |
-| 2 | Mode enum + Item / ItemTemplate モデル | P0 |
-| 3 | ItemStore（JSON 永続化） | P0 |
-| 4 | DefaultTemplates | P0 |
-| 5 | ItemListView（モード別一覧 + ステータス表示） | P0 |
-| 6 | ItemFormView（新規追加 / 編集） | P0 |
-| 7 | ItemDetailView（詳細 + 「買った！」） | P0 |
-| 8 | TemplatePickerView | P0 |
-| 9 | ShoppingListView + ShoppingListStore | P0 |
-| 10 | NotificationService（ローカル通知） | P0 |
-| 11 | TabView + ContentView 統合 | P0 |
-| 12 | PlanService（StoreKit 2） | P1 |
-| 13 | PaywallView | P1 |
-| 14 | SettingsView | P1 |
-| 15 | 無料 / Plus 制限の適用 | P1 |
-| 16 | テスト | P1 |
+---
 
-### Phase 2（watchOS） — 目標: 1〜2週間
+## 10. watchOS 画面一覧
 
-| # | タスク | 優先度 |
-|---|--------|--------|
-| 1 | watchOS target 追加（project.yml） | P0 |
-| 2 | WatchSyncService | P0 |
-| 3 | WatchHomeView | P0 |
-| 4 | WatchItemListView | P0 |
-| 5 | WatchShoppingListView | P0 |
-| 6 | 触覚通知 | P1 |
-| 7 | Complication / Widget | P1 |
+| 画面 | 役割 |
+|---|---|
+| WatchHomeView | 緊急上位5件 / カテゴリリンク / 買い物リストリンク |
+| WatchItemListView | モード別一覧 |
+| WatchItemDetailView | 詳細 + 「買った！」ボタン |
+| WatchShoppingListView | 未チェックエントリ + 緊急候補 |
 
-### Phase 3（Android） — 目標: 2〜3週間
+---
 
-| # | タスク | 優先度 |
-|---|--------|--------|
-| 1 | Android Studio プロジェクト初期化 | P0 |
-| 2 | Room Entity + DAO | P0 |
-| 3 | Repository + ViewModel | P0 |
-| 4 | 画面実装（Compose） | P0 |
-| 5 | 通知実装（AlarmManager） | P0 |
-| 6 | Google Play Billing | P1 |
-| 7 | Material 3 テーマ調整 | P1 |
-| 8 | ストア公開準備 | P1 |
+## 11. 既知の制限
+
+- Watch からの「買った！」後、通知の再スケジュールは iPhone 側のみ
+- 通知アクション「買った！」はフォアグラウンド起動のみ（バックグラウンド購入処理未実装）
+- CloudKit 未接続時はオフラインキャッシュで動作（共有データは表示されない）
