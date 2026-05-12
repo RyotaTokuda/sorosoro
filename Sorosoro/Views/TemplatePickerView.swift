@@ -9,7 +9,7 @@ struct TemplatePickerView: View {
 
     var body: some View {
         List {
-            Section("プリセット") {
+            Section("template.section.preset") {
                 ForEach(DefaultTemplates.templates(for: mode)) { template in
                     templateRow(template)
                 }
@@ -18,7 +18,7 @@ struct TemplatePickerView: View {
             let filterModes: [Mode] = mode == .daily ? [.daily, .gadget] : [mode]
             let custom = templateStore.customTemplates.filter { filterModes.contains($0.mode) }
             if !custom.isEmpty {
-                Section("カスタム") {
+                Section("template.section.custom") {
                     ForEach(custom) { template in
                         templateRow(template)
                     }
@@ -30,11 +30,11 @@ struct TemplatePickerView: View {
                 }
             }
         }
-        .navigationTitle("テンプレートから追加")
+        .navigationTitle("template.nav.title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("閉じる") { dismiss() }
+                Button("common.close") { dismiss() }
             }
         }
         .sheet(item: $selectedTemplate) { template in
@@ -55,10 +55,10 @@ struct TemplatePickerView: View {
                     .foregroundStyle(.primary)
                 Spacer()
                 VStack(alignment: .trailing, spacing: 2) {
-                    Text("\(days)日")
+                    Text("item.detail.days.value \(days)")
                         .foregroundStyle(.secondary)
                     if isAdjusted {
-                        Text("(基準: \(template.cycleDays)日)")
+                        Text("template.base.days \(template.cycleDays)")
                             .font(.caption2)
                             .foregroundStyle(.tertiary)
                     }

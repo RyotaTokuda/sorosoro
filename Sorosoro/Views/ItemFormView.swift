@@ -21,54 +21,54 @@ struct ItemFormView: View {
 
     var body: some View {
         Form {
-            Section("基本情報") {
-                TextField("アイテム名", text: $name)
+            Section("form.section.basic") {
+                TextField("form.name.placeholder", text: $name)
 
-                Stepper("交換周期: \(cycleDays)日", value: $cycleDays, in: 1...9999)
+                Stepper(String(localized: "form.cycle.stepper \(cycleDays)"),
+                        value: $cycleDays, in: 1...9999)
 
                 DatePicker(
-                    "前回購入日",
+                    String(localized: "form.last.purchase.date"),
                     selection: $lastPurchaseDate,
                     displayedComponents: .date
                 )
             }
 
             if planService.canUseMemo() {
-                Section("メモ") {
-                    TextField("メモ（任意）", text: $memo, axis: .vertical)
+                Section("form.section.memo") {
+                    TextField("form.memo.placeholder", text: $memo, axis: .vertical)
                         .lineLimit(3...6)
                 }
             }
 
-            Section("通知") {
-                Toggle("通知する", isOn: $notificationEnabled)
+            Section("form.section.notification") {
+                Toggle("form.notification.toggle", isOn: $notificationEnabled)
                 if notificationEnabled {
                     Stepper(
-                        "\(notificationDaysBefore)日前に通知",
+                        String(localized: "form.notification.days.before \(notificationDaysBefore)"),
                         value: $notificationDaysBefore,
                         in: 1...30
                     )
                 }
             }
 
-            // 次回予定日プレビュー
             Section {
                 HStack {
-                    Text("次回予定日")
+                    Text("form.next.due.date")
                     Spacer()
                     Text(computedNextDueDate, style: .date)
                         .foregroundStyle(.secondary)
                 }
             }
         }
-        .navigationTitle(isEditing ? "アイテム編集" : "新規アイテム")
+        .navigationTitle(isEditing ? String(localized: "form.title.edit") : String(localized: "form.title.new"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("キャンセル") { dismiss() }
+                Button("common.cancel") { dismiss() }
             }
             ToolbarItem(placement: .confirmationAction) {
-                Button("保存") { save() }
+                Button("common.save") { save() }
                     .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }

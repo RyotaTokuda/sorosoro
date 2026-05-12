@@ -19,12 +19,11 @@ struct ItemListView: View {
 
     var body: some View {
         List {
-            // 無料プランで非アクティブモードを表示中のインジケーター
             if isFreeInactiveMode {
                 HStack(spacing: 8) {
                     Image(systemName: "arrow.triangle.2.circlepath")
                         .foregroundStyle(.blue)
-                    Text("タブをタップしてこのモードに切り替えられます")
+                    Text("item.list.mode.switch.hint")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -32,9 +31,9 @@ struct ItemListView: View {
             }
             if items.isEmpty {
                 ContentUnavailableView {
-                    Label("アイテムがありません", systemImage: "tray")
+                    Label("item.list.empty.title", systemImage: "tray")
                 } description: {
-                    Text("テンプレートから追加するか、新規作成してください")
+                    Text("item.list.empty.description")
                 }
             } else {
                 ForEach(items) { item in
@@ -56,7 +55,7 @@ struct ItemListView: View {
                             showingPaywall = true
                         }
                     } label: {
-                        Label("新規作成", systemImage: "plus")
+                        Label("item.list.add.new", systemImage: "plus")
                     }
                     Button {
                         if planService.canAddItem(currentCount: itemStore.itemCount(for: mode)) {
@@ -65,7 +64,7 @@ struct ItemListView: View {
                             showingPaywall = true
                         }
                     } label: {
-                        Label("テンプレートから追加", systemImage: "doc.on.doc")
+                        Label("item.list.add.template", systemImage: "doc.on.doc")
                     }
                 } label: {
                     Image(systemName: "plus")
@@ -107,7 +106,7 @@ struct ItemRowView: View {
                 Text(item.name)
                     .font(.body)
                     .fontWeight(.medium)
-                Text("周期: \(item.cycleDays)日")
+                Text("item.row.cycle.days \(item.cycleDays)")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -128,7 +127,7 @@ struct ItemRowView: View {
     private var statusBadge: some View {
         switch item.status {
         case .overdue:
-            Text("\(abs(item.daysRemaining))日超過")
+            Text("status.overdue \(abs(item.daysRemaining))")
                 .font(.caption)
                 .fontWeight(.semibold)
                 .padding(.horizontal, 8)
@@ -137,7 +136,7 @@ struct ItemRowView: View {
                 .foregroundStyle(.red)
                 .clipShape(Capsule())
         case .soon:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption)
                 .fontWeight(.semibold)
                 .padding(.horizontal, 8)
@@ -146,7 +145,7 @@ struct ItemRowView: View {
                 .foregroundStyle(.orange)
                 .clipShape(Capsule())
         case .ok:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption)
                 .padding(.horizontal, 8)
                 .padding(.vertical, 2)

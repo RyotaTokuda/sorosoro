@@ -12,9 +12,9 @@ enum Mode: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .daily: "日用品"
-        case .car: "車"
-        case .gadget: "ガジェット"
+        case .daily: String(localized: "mode.daily")
+        case .car: String(localized: "mode.car")
+        case .gadget: String(localized: "mode.gadget")
         }
     }
 

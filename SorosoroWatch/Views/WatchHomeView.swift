@@ -6,10 +6,9 @@ struct WatchHomeView: View {
     var body: some View {
         NavigationStack {
             List {
-                // 緊急アイテム（期限切れ + そろそろ）
                 let urgent = itemStore.urgentItems()
                 if !urgent.isEmpty {
-                    Section("そろそろ") {
+                    Section("watch.home.urgent.section") {
                         ForEach(urgent.prefix(5)) { item in
                             NavigationLink(destination: WatchItemDetailView(itemId: item.id)) {
                                 WatchItemRow(item: item)
@@ -18,8 +17,7 @@ struct WatchHomeView: View {
                     }
                 }
 
-                // モード別一覧へのリンク
-                Section("カテゴリ") {
+                Section("watch.home.category.section") {
                     ForEach(Mode.allCases) { mode in
                         let count = itemStore.itemCount(for: mode)
                         if count > 0 {
@@ -39,20 +37,19 @@ struct WatchHomeView: View {
                     }
                 }
 
-                // 買い物リストへ
                 NavigationLink(destination: WatchShoppingListView()) {
-                    Label("買い物リスト", systemImage: "cart.fill")
+                    Label("watch.shopping.nav.title", systemImage: "cart.fill")
                 }
 
                 if urgent.isEmpty {
                     ContentUnavailableView {
-                        Label("全てOK", systemImage: "checkmark.circle")
+                        Label("watch.home.all.ok.title", systemImage: "checkmark.circle")
                     } description: {
-                        Text("そろそろなアイテムはありません")
+                        Text("watch.home.all.ok.description")
                     }
                 }
             }
-            .navigationTitle("そろそろ")
+            .navigationTitle("watch.nav.title")
         }
     }
 }
@@ -78,15 +75,15 @@ struct WatchItemRow: View {
     private var statusText: some View {
         switch item.status {
         case .overdue:
-            Text("\(abs(item.daysRemaining))日超過")
+            Text("status.overdue \(abs(item.daysRemaining))")
                 .font(.caption2)
                 .foregroundStyle(.red)
         case .soon:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption2)
                 .foregroundStyle(.orange)
         case .ok:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption2)
                 .foregroundStyle(.green)
         }

@@ -6,6 +6,7 @@ options:
     watchOS: "10.0"
   xcodeVersion: "26.0"
   generateEmptyDirectories: true
+  developmentLanguage: ja
 settings:
   base:
     SWIFT_VERSION: "5.9"
@@ -13,6 +14,7 @@ settings:
     CURRENT_PROJECT_VERSION: "3"
     DEVELOPMENT_TEAM: "R7B3AEZ7TA"
     CODE_SIGN_STYLE: Automatic
+    KNOWN_REGIONS: "ja en zh-Hans zh-Hant"
 targets:
   Sorosoro:
     type: application

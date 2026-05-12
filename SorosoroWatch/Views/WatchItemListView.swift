@@ -13,7 +13,7 @@ struct WatchItemListView: View {
             }
 
             if itemStore.items(for: mode).isEmpty {
-                Text("アイテムなし")
+                Text("watch.item.list.empty")
                     .foregroundStyle(.secondary)
             }
         }

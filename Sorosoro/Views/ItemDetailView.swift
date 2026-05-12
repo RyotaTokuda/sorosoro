@@ -15,46 +15,43 @@ struct ItemDetailView: View {
     var body: some View {
         if let item {
             List {
-                // 周期最適化サジェスト
                 if !suggestionDismissed, let suggested = item.suggestedCycleDays() {
                     cycleSuggestionSection(item: item, suggested: suggested)
                 }
 
-                // ステータスセクション
                 Section {
                     HStack {
-                        Text("ステータス")
+                        Text("item.detail.status")
                         Spacer()
                         statusText(item)
                     }
                     HStack {
-                        Text("残り日数")
+                        Text("item.detail.days.remaining")
                         Spacer()
-                        Text("\(item.daysRemaining)日")
+                        Text("item.detail.days.value \(item.daysRemaining)")
                             .foregroundStyle(item.status == .overdue ? .red : .primary)
                     }
                     HStack {
-                        Text("次回予定日")
+                        Text("item.detail.next.due.date")
                         Spacer()
                         Text(item.nextDueDate, style: .date)
                     }
                 }
 
-                // 詳細セクション
-                Section("詳細") {
+                Section("item.detail.section.detail") {
                     HStack {
-                        Text("交換周期")
+                        Text("item.detail.cycle")
                         Spacer()
-                        Text("\(item.cycleDays)日")
+                        Text("item.detail.days.value \(item.cycleDays)")
                     }
                     HStack {
-                        Text("前回購入日")
+                        Text("item.detail.last.purchase")
                         Spacer()
                         Text(item.lastPurchaseDate, style: .date)
                     }
                     if !item.memo.isEmpty {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("メモ")
+                            Text("item.detail.memo")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Text(item.memo)
@@ -62,9 +59,8 @@ struct ItemDetailView: View {
                     }
                 }
 
-                // 購入履歴
                 if !item.purchaseHistory.isEmpty {
-                    Section("購入履歴 (直近\(item.purchaseHistory.count)回)") {
+                    Section("item.detail.history.title \(item.purchaseHistory.count)") {
                         ForEach(item.purchaseHistory.sorted().reversed(), id: \.self) { date in
                             Text(date, style: .date)
                                 .foregroundStyle(.secondary)
@@ -72,29 +68,27 @@ struct ItemDetailView: View {
                     }
                 }
 
-                // 通知セクション
-                Section("通知") {
+                Section("item.detail.section.notification") {
                     HStack {
-                        Text("通知")
+                        Text("item.detail.section.notification")
                         Spacer()
                         Text(item.notificationEnabled ? "ON" : "OFF")
                             .foregroundStyle(item.notificationEnabled ? .green : .secondary)
                     }
                     if item.notificationEnabled {
                         HStack {
-                            Text("通知タイミング")
+                            Text("item.detail.notification.timing")
                             Spacer()
-                            Text("\(item.notificationDaysBefore)日前")
+                            Text("item.detail.notification.days.before \(item.notificationDaysBefore)")
                         }
                     }
                 }
 
-                // アクションセクション
                 Section {
                     Button {
                         showingPurchaseConfirm = true
                     } label: {
-                        Label("買った！", systemImage: "checkmark.circle.fill")
+                        Label("action.purchased", systemImage: "checkmark.circle.fill")
                             .foregroundStyle(.green)
                             .fontWeight(.semibold)
                     }
@@ -103,7 +97,7 @@ struct ItemDetailView: View {
                         Button {
                             shoppingListStore.addEntry(itemId: item.id)
                         } label: {
-                            Label("買い物リストに追加", systemImage: "cart.badge.plus")
+                            Label("action.add.to.shopping", systemImage: "cart.badge.plus")
                         }
                     }
                 }
@@ -111,7 +105,7 @@ struct ItemDetailView: View {
             .navigationTitle(item.name)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button("編集") { showingEditSheet = true }
+                    Button("common.edit") { showingEditSheet = true }
                 }
             }
             .sheet(isPresented: $showingEditSheet) {
@@ -119,21 +113,21 @@ struct ItemDetailView: View {
                     ItemFormView(mode: item.mode, editingItem: item)
                 }
             }
-            .alert("購入完了", isPresented: $showingPurchaseConfirm) {
-                Button("キャンセル", role: .cancel) {}
-                Button("買った！") {
+            .alert("alert.purchase.complete.title", isPresented: $showingPurchaseConfirm) {
+                Button("common.cancel", role: .cancel) {}
+                Button("action.purchased") {
                     itemStore.markPurchased(id: item.id)
                     if let updated = itemStore.item(by: item.id) {
                         NotificationService.scheduleNotification(for: updated)
                     }
                     shoppingListStore.removeEntries(for: item.id)
-                    suggestionDismissed = false  // re-evaluate after new purchase
+                    suggestionDismissed = false
                 }
             } message: {
-                Text("\(item.name)を購入済みにしますか？\n次回予定日が更新されます。")
+                Text("alert.purchase.confirm.message \(item.name)")
             }
         } else {
-            ContentUnavailableView("アイテムが見つかりません", systemImage: "questionmark.circle")
+            ContentUnavailableView("item.detail.not.found", systemImage: "questionmark.circle")
         }
     }
 
@@ -146,7 +140,7 @@ struct ItemDetailView: View {
                 HStack {
                     Image(systemName: "lightbulb.fill")
                         .foregroundStyle(.yellow)
-                    Text("周期を最適化できます")
+                    Text("suggestion.title")
                         .font(.subheadline.bold())
                     Spacer()
                     Button {
@@ -157,7 +151,7 @@ struct ItemDetailView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
-                Text("\(item.purchaseHistory.count)回の購入実績から、実際の消費ペースは約**\(suggested)日**です。（現在の設定: \(item.cycleDays)日）")
+                Text("suggestion.body \(item.purchaseHistory.count) \(suggested) \(item.cycleDays)")
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
@@ -165,7 +159,7 @@ struct ItemDetailView: View {
                     Button {
                         applysuggestion(to: item, days: suggested)
                     } label: {
-                        Text("周期を\(suggested)日に変更")
+                        Text("suggestion.apply \(suggested)")
                             .font(.caption.bold())
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 8)
@@ -178,7 +172,7 @@ struct ItemDetailView: View {
                     Button {
                         suggestionDismissed = true
                     } label: {
-                        Text("このままにする")
+                        Text("suggestion.dismiss")
                             .font(.caption)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 8)
@@ -213,11 +207,11 @@ struct ItemDetailView: View {
     private func statusText(_ item: Item) -> some View {
         switch item.status {
         case .overdue:
-            Text("期限切れ").foregroundStyle(.red).fontWeight(.semibold)
+            Text("status.overdue.label").foregroundStyle(.red).fontWeight(.semibold)
         case .soon:
-            Text("そろそろ").foregroundStyle(.orange).fontWeight(.semibold)
+            Text("status.soon.label").foregroundStyle(.orange).fontWeight(.semibold)
         case .ok:
-            Text("まだ大丈夫").foregroundStyle(.green)
+            Text("status.ok.label").foregroundStyle(.green)
         }
     }
 }

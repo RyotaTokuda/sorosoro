@@ -65,8 +65,8 @@ enum NotificationService {
         }
 
         let content = UNMutableNotificationContent()
-        content.title = "\(item.name)の交換時期です"
-        content.body = "交換時期まであと\(item.notificationDaysBefore)日です"
+        content.title = String(localized: "notification.title \(item.name)")
+        content.body = String(localized: "notification.body \(item.notificationDaysBefore)")
         content.sound = .default
         content.categoryIdentifier = AppConstants.notificationCategoryID
 
@@ -95,7 +95,7 @@ enum NotificationService {
     static func registerCategories() {
         let purchasedAction = UNNotificationAction(
             identifier: AppConstants.notificationActionPurchased,
-            title: "買った！",
+            title: String(localized: "notification.action.purchased"),
             options: [.foreground]
         )
         let category = UNNotificationCategory(

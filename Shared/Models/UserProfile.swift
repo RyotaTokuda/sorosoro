@@ -10,10 +10,10 @@ enum VehicleType: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .gasoline: "ガソリン車"
-        case .diesel:   "ディーゼル車"
-        case .hev:      "ハイブリッド車"
-        case .ev:       "電気自動車"
+        case .gasoline: String(localized: "vehicle.gasoline")
+        case .diesel:   String(localized: "vehicle.diesel")
+        case .hev:      String(localized: "vehicle.hev")
+        case .ev:       String(localized: "vehicle.ev")
         }
     }
 }
@@ -27,9 +27,9 @@ enum MonthlyMileage: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .low:    "〜500km"
-        case .medium: "500〜1500km"
-        case .high:   "1500km〜"
+        case .low:    String(localized: "mileage.low")
+        case .medium: String(localized: "mileage.medium")
+        case .high:   String(localized: "mileage.high")
         }
     }
 

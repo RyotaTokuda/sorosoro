@@ -24,7 +24,7 @@ struct PaywallView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("閉じる") { dismiss() }
+                    Button("common.close") { dismiss() }
                         .foregroundStyle(.secondary)
                 }
             }
@@ -58,9 +58,9 @@ struct PaywallView: View {
                 .padding(.top, 32)
 
                 VStack(spacing: 8) {
-                    Text("買いどき Plus")
+                    Text("paywall.title")
                         .font(.system(size: 26, weight: .bold))
-                    Text("管理を、もっとかしこく。")
+                    Text("paywall.subtitle")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -71,31 +71,31 @@ struct PaywallView: View {
 
     private var featureSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Plusでできること")
+            Text("paywall.features.title")
                 .font(.headline)
                 .padding(.horizontal, 20)
                 .padding(.top, 24)
                 .padding(.bottom, 12)
 
             VStack(spacing: 1) {
-                featureRow("全モード同時に管理",
-                           detail: "日用品・車 を両方使える",
+                featureRow("paywall.feature.all.modes",
+                           detail: "paywall.feature.all.modes.detail",
                            icon: "square.grid.2x2.fill", color: .blue,
-                           freeLabel: "1つのみ")
-                featureRow("アイテム・通知 無制限",
-                           detail: "登録件数・通知件数の上限なし",
+                           freeLabel: "paywall.feature.all.modes.free.label")
+                featureRow("paywall.feature.unlimited",
+                           detail: "paywall.feature.unlimited.detail",
                            icon: "infinity", color: .teal,
-                           freeLabel: "各10件/5件")
-                featureRow("カスタムテンプレート",
-                           detail: "よく買う商品を登録して再利用",
+                           freeLabel: "paywall.feature.unlimited.free.label")
+                featureRow("paywall.feature.templates",
+                           detail: "paywall.feature.templates.detail",
                            icon: "doc.badge.plus", color: .indigo,
-                           freeLabel: "プリセットのみ")
-                featureRow("メモ機能",
-                           detail: "銘柄・メーカー・購入先のメモ",
+                           freeLabel: "paywall.feature.templates.free.label")
+                featureRow("paywall.feature.memo",
+                           detail: "paywall.feature.memo.detail",
                            icon: "note.text", color: .orange,
                            freeLabel: nil)
-                featureRow("家族・パートナーと共有",
-                           detail: "iCloudで同じ管理リストを共有",
+                featureRow("paywall.feature.sharing",
+                           detail: "paywall.feature.sharing.detail",
                            icon: "person.2.fill", color: .purple,
                            freeLabel: nil)
             }
@@ -107,7 +107,7 @@ struct PaywallView: View {
 
     private var planPickerSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("プランを選択")
+            Text("paywall.plan.section.title")
                 .font(.headline)
                 .padding(.horizontal, 20)
                 .padding(.top, 24)
@@ -117,7 +117,7 @@ struct PaywallView: View {
                     planCard(
                         option: .yearly,
                         product: yearly,
-                        badge: "2ヶ月分お得",
+                        badge: "paywall.yearly.badge",
                         monthlyEquivalent: monthlyEquivalent(yearly)
                     )
                 }
@@ -147,7 +147,7 @@ struct PaywallView: View {
                     do {
                         _ = try await planService.purchase(product)
                     } catch {
-                        errorMessage = "購入に失敗しました"
+                        errorMessage = String(localized: "paywall.purchase.error")
                     }
                     purchasing = false
                 }
@@ -158,7 +158,7 @@ struct PaywallView: View {
                     } else {
                         Image(systemName: "sparkles")
                     }
-                    Text(purchasing ? "処理中..." : "Plusをはじめる")
+                    Text(purchasing ? String(localized: "paywall.purchasing") : String(localized: "paywall.cta"))
                         .font(.headline)
                 }
                 .frame(maxWidth: .infinity)
@@ -175,7 +175,7 @@ struct PaywallView: View {
                     .foregroundStyle(.red)
             }
 
-            Button("購入を復元") {
+            Button("paywall.restore") {
                 Task { await planService.restorePurchases() }
             }
             .font(.subheadline)
@@ -189,16 +189,16 @@ struct PaywallView: View {
         VStack(spacing: 10) {
             HStack(spacing: 24) {
                 if let termsURL = URL(string: "https://mankai-software.com/terms") {
-                    Link("利用規約", destination: termsURL)
+                    Link("paywall.terms", destination: termsURL)
                 }
                 if let privacyURL = URL(string: "https://mankai-software.com/privacy") {
-                    Link("プライバシーポリシー", destination: privacyURL)
+                    Link("paywall.privacy", destination: privacyURL)
                 }
             }
             .font(.caption)
             .foregroundStyle(.secondary)
 
-            Text("サブスクリプションは確認後に課金されます。現在の期間終了24時間前までにキャンセルしない限り自動更新されます。App Store「設定」→「Apple ID」→「サブスクリプション」から解約できます。")
+            Text("paywall.legal")
                 .font(.caption2)
                 .foregroundStyle(Color(UIColor.tertiaryLabel))
                 .multilineTextAlignment(.center)
@@ -210,7 +210,7 @@ struct PaywallView: View {
 
     // MARK: - Components
 
-    private func featureRow(_ title: String, detail: String, icon: String, color: Color, freeLabel: String?) -> some View {
+    private func featureRow(_ titleKey: LocalizedStringKey, detail detailKey: LocalizedStringKey, icon: String, color: Color, freeLabel freeLabelKey: LocalizedStringKey?) -> some View {
         HStack(spacing: 14) {
             Image(systemName: icon)
                 .font(.system(size: 17))
@@ -220,17 +220,17 @@ struct PaywallView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(title)
+                Text(titleKey)
                     .font(.subheadline.weight(.medium))
-                Text(detail)
+                Text(detailKey)
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
 
             Spacer()
 
-            if let freeLabel {
-                Text(freeLabel)
+            if let freeLabelKey {
+                Text(freeLabelKey)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                     .padding(.horizontal, 8)
@@ -248,7 +248,7 @@ struct PaywallView: View {
         .background(Color(UIColor.secondarySystemGroupedBackground))
     }
 
-    private func planCard(option: PlanOption, product: Product, badge: String?, monthlyEquivalent: String?) -> some View {
+    private func planCard(option: PlanOption, product: Product, badge: LocalizedStringKey?, monthlyEquivalent: String?) -> some View {
         let isSelected = selectedPlan == option
         return Button { selectedPlan = option } label: {
             HStack(spacing: 14) {
@@ -258,7 +258,7 @@ struct PaywallView: View {
 
                 VStack(alignment: .leading, spacing: 2) {
                     HStack(spacing: 6) {
-                        Text(option == .yearly ? "年額プラン" : "月額プラン")
+                        Text(option == .yearly ? "paywall.plan.yearly" : "paywall.plan.monthly")
                             .font(.subheadline.weight(.semibold))
                         if let badge {
                             Text(badge)
@@ -305,6 +305,6 @@ struct PaywallView: View {
         let saving = Int(((monthlyDouble - equivDouble) / monthlyDouble * 100).rounded())
         let equivDecimal = Decimal(equivDouble)
         let formatted = equivDecimal.formatted(product.priceFormatStyle)
-        return "\(formatted)/月（約\(saving)%割引）"
+        return String(localized: "paywall.monthly.equivalent \(formatted) \(saving)")
     }
 }

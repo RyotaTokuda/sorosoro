@@ -8,27 +8,25 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-            // プランセクション
-            Section("プラン") {
+            Section("settings.section.plan") {
                 HStack {
-                    Text("現在のプラン")
+                    Text("settings.current.plan")
                     Spacer()
-                    Text(planService.isPro ? "Plus" : "無料")
+                    Text(planService.isPro ? "Plus" : String(localized: "settings.plan.free"))
                         .foregroundStyle(planService.isPro ? .green : .secondary)
                 }
                 if !planService.isPro {
                     Button {
                         showingPaywall = true
                     } label: {
-                        Label("Plus にアップグレード", systemImage: "star.fill")
+                        Label("settings.upgrade", systemImage: "star.fill")
                     }
                 }
             }
 
-            // モード設定（無料のみ）
             if !planService.canUseAllModes() {
-                Section("アクティブモード") {
-                    Picker("モード", selection: Binding(
+                Section("settings.section.active.mode") {
+                    Picker(String(localized: "settings.mode.picker.label"), selection: Binding(
                         get: { settingsStore.settings.selectedMode },
                         set: { settingsStore.setSelectedMode($0) }
                     )) {
@@ -40,8 +38,7 @@ struct SettingsView: View {
                 }
             }
 
-            // 表示タブ設定
-            Section("表示するタブ") {
+            Section("settings.section.visible.tabs") {
                 ForEach(Mode.allCases) { mode in
                     let isVisible = profileStore.profile.visibleModes.contains(mode)
                     Button {
@@ -58,11 +55,10 @@ struct SettingsView: View {
                 }
             }
 
-            // プロフィール設定
             if profileStore.profile.visibleModes.contains(.daily) {
-                Section("家族の人数") {
+                Section("settings.section.family") {
                     Stepper(
-                        "大人: \(profileStore.profile.adultsCount)人",
+                        String(localized: "settings.adults.count \(profileStore.profile.adultsCount)"),
                         value: Binding(
                             get: { profileStore.profile.adultsCount },
                             set: { profileStore.setAdultsCount($0) }
@@ -70,22 +66,22 @@ struct SettingsView: View {
                         in: 1...6
                     )
                     Stepper(
-                        "子供（中学生以下）: \(profileStore.profile.childrenCount)人",
+                        String(localized: "settings.children.count \(profileStore.profile.childrenCount)"),
                         value: Binding(
                             get: { profileStore.profile.childrenCount },
                             set: { profileStore.setChildrenCount($0) }
                         ),
                         in: 0...6
                     )
-                    Text("子供は大人の約60%として計算。日用品の補充タイミングに反映されます")
+                    Text("settings.family.hint")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
             }
 
             if profileStore.profile.visibleModes.contains(.car) {
-                Section("車の情報") {
-                    Picker("月間走行距離", selection: Binding(
+                Section("settings.section.car") {
+                    Picker(String(localized: "settings.monthly.mileage"), selection: Binding(
                         get: { profileStore.profile.monthlyMileage },
                         set: { profileStore.setMonthlyMileage($0) }
                     )) {
@@ -93,7 +89,7 @@ struct SettingsView: View {
                             Text(m.displayName).tag(m)
                         }
                     }
-                    Picker("車の種類", selection: Binding(
+                    Picker(String(localized: "settings.vehicle.type"), selection: Binding(
                         get: { profileStore.profile.vehicleType },
                         set: { profileStore.setVehicleType($0) }
                     )) {
@@ -104,9 +100,8 @@ struct SettingsView: View {
                 }
             }
 
-            // 通知設定
-            Section("通知") {
-                Toggle("通知を有効にする", isOn: Binding(
+            Section("settings.section.notification") {
+                Toggle("settings.notification.global.toggle", isOn: Binding(
                     get: { settingsStore.settings.globalNotificationEnabled },
                     set: { newValue in
                         if newValue {
@@ -117,7 +112,7 @@ struct SettingsView: View {
                 ))
 
                 Stepper(
-                    "デフォルト通知: \(settingsStore.settings.defaultNotificationDaysBefore)日前",
+                    String(localized: "settings.notification.default \(settingsStore.settings.defaultNotificationDaysBefore)"),
                     value: Binding(
                         get: { settingsStore.settings.defaultNotificationDaysBefore },
                         set: { settingsStore.setDefaultNotificationDays($0) }
@@ -126,26 +121,24 @@ struct SettingsView: View {
                 )
             }
 
-            // 共有
-            Section("家族・パートナーと共有") {
+            Section("settings.section.sharing") {
                 ShareButton()
             }
 
-            // アプリ情報
-            Section("アプリ情報") {
+            Section("settings.section.app.info") {
                 HStack {
-                    Text("バージョン")
+                    Text("settings.version")
                     Spacer()
                     Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")
                         .foregroundStyle(.secondary)
                 }
-                Button("購入の復元") {
+                Button("settings.restore.purchases") {
                     Task { await planService.restorePurchases() }
                 }
             }
 
         }
-        .navigationTitle("設定")
+        .navigationTitle("tab.settings")
         .sheet(isPresented: $showingPaywall) {
             PaywallView()
         }
@@ -154,7 +147,7 @@ struct SettingsView: View {
     private func toggleMode(_ mode: Mode, current: [Mode]) {
         var modes = Set(current)
         if modes.contains(mode) {
-            guard modes.count > 1 else { return } // at least one must remain
+            guard modes.count > 1 else { return }
             modes.remove(mode)
         } else {
             modes.insert(mode)

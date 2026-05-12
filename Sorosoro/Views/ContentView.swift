@@ -109,8 +109,8 @@ struct ContentView: View {
     private func tabLabel(for tab: Tab) -> String {
         switch tab {
         case .mode(let m): return m.displayName
-        case .shopping: return "買い物リスト"
-        case .settings: return "設定"
+        case .shopping: return String(localized: "tab.shopping")
+        case .settings: return String(localized: "tab.settings")
         }
     }
 }

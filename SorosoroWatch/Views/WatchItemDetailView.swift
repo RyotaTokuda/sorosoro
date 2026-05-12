@@ -14,7 +14,6 @@ struct WatchItemDetailView: View {
         if let item {
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    // ステータス
                     HStack {
                         statusIcon(item)
                         VStack(alignment: .leading) {
@@ -26,21 +25,19 @@ struct WatchItemDetailView: View {
 
                     Divider()
 
-                    // 詳細
                     VStack(alignment: .leading, spacing: 6) {
-                        detailRow("周期", value: "\(item.cycleDays)日")
-                        detailRow("前回", value: item.lastPurchaseDate.formatted(date: .abbreviated, time: .omitted))
-                        detailRow("次回", value: item.nextDueDate.formatted(date: .abbreviated, time: .omitted))
+                        detailRow("watch.detail.cycle.label", value: String(localized: "item.detail.days.value \(item.cycleDays)"))
+                        detailRow("watch.detail.last.label", value: item.lastPurchaseDate.formatted(date: .abbreviated, time: .omitted))
+                        detailRow("watch.detail.next.label", value: item.nextDueDate.formatted(date: .abbreviated, time: .omitted))
                     }
                     .font(.caption)
 
                     Divider()
 
-                    // 買った！ボタン
                     Button {
                         showingPurchaseConfirm = true
                     } label: {
-                        Label("買った！", systemImage: "checkmark.circle.fill")
+                        Label("action.purchased", systemImage: "checkmark.circle.fill")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
@@ -50,15 +47,15 @@ struct WatchItemDetailView: View {
             }
             .navigationTitle(item.name)
             .navigationBarTitleDisplayMode(.inline)
-            .alert("購入完了", isPresented: $showingPurchaseConfirm) {
-                Button("キャンセル", role: .cancel) {}
-                Button("買った！") {
+            .alert("alert.purchase.complete.title", isPresented: $showingPurchaseConfirm) {
+                Button("common.cancel", role: .cancel) {}
+                Button("action.purchased") {
                     itemStore.markPurchased(id: item.id)
                     shoppingListStore.removeEntries(for: item.id)
                     WatchSyncService.shared.sendMarkPurchased(itemId: item.id)
                 }
             } message: {
-                Text("\(item.name)を購入済みにしますか？")
+                Text("alert.purchase.confirm.short \(item.name)")
             }
         }
     }
@@ -85,23 +82,23 @@ struct WatchItemDetailView: View {
     private func statusText(_ item: Item) -> some View {
         switch item.status {
         case .overdue:
-            Text("\(abs(item.daysRemaining))日超過")
+            Text("status.overdue \(abs(item.daysRemaining))")
                 .font(.caption)
                 .foregroundStyle(.red)
         case .soon:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption)
                 .foregroundStyle(.orange)
         case .ok:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption)
                 .foregroundStyle(.green)
         }
     }
 
-    private func detailRow(_ label: String, value: String) -> some View {
+    private func detailRow(_ labelKey: LocalizedStringKey, value: String) -> some View {
         HStack {
-            Text(label)
+            Text(labelKey)
                 .foregroundStyle(.secondary)
             Spacer()
             Text(value)

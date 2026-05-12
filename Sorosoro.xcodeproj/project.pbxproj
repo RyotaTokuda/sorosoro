@@ -14,6 +14,7 @@
 		0F2DA1FA4C64490801EB3937 /* WatchItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B473993ED7F14B3A3CD9E /* WatchItemDetailView.swift */; };
 		0FD4D6406BD5E48BD8B9C0BE /* DefaultTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386145F340945C53322C7552 /* DefaultTemplates.swift */; };
 		102B4EF1A2FA32ABA903BA90 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0679B21D79E5A712A74C7A9B /* WatchHomeView.swift */; };
+		11E97B62B143FC6F9049C6F3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 29212EAE19409F610FEEAB4F /* Localizable.xcstrings */; };
 		16232DAC182E8E793F37AD85 /* ShoppingListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */; };
 		1D8EB834386552D4C62C022D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043129A13030A2438C6759D /* SettingsView.swift */; };
 		2017AC9853E9B99D9EF31F9E /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4208B9475E0D74198C54E5 /* SettingsStore.swift */; };
@@ -88,6 +89,7 @@
 		F2F3EC11ACFD9F4EB256725A /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */; };
 		F646802A9D86C9E0C72D912A /* CKRecord+Sorosoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */; };
 		F8FBA7EA3B56F7079F2BBE7A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7F615A4944E13E264AFEB /* UserProfile.swift */; };
+		F984A1D97ABE82F409484D5E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DA746D3E583F3B215D406163 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,7 @@
 		22ED35AD2206F8FB64C207C9 /* WatchSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncService.swift; sourceTree = "<group>"; };
 		23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Sorosoro.swift"; sourceTree = "<group>"; };
 		24133E704B8A4ADAF253D799 /* ShoppingListEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntry.swift; sourceTree = "<group>"; };
+		29212EAE19409F610FEEAB4F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2CF58A3A970EEA7C1EEBC19D /* SorosoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorosoroApp.swift; sourceTree = "<group>"; };
 		2E3EE42806F5B47723754FEF /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		3043129A13030A2438C6759D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		C4036CB8A6B82B3440829B40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateStore.swift; sourceTree = "<group>"; };
 		CC8FD1D4D28AED51EAA8E529 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
+		DA746D3E583F3B215D406163 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DBCAB353080B6F8EDBB4A886 /* PlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanService.swift; sourceTree = "<group>"; };
 		DFD6EB2474E5B58D60D57203 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E101A7CDAB3E62EF3F342CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				E101A7CDAB3E62EF3F342CFA /* Assets.xcassets */,
+				29212EAE19409F610FEEAB4F /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			children = (
 				C4036CB8A6B82B3440829B40 /* Assets.xcassets */,
 				716662A1DC22E34DD178B7B4 /* Info.plist */,
+				DA746D3E583F3B215D406163 /* Localizable.xcstrings */,
 				754DBD028E80D031C31070B6 /* Sorosoro.storekit */,
 			);
 			path = Resources;
@@ -418,11 +424,11 @@
 				};
 			};
 			buildConfigurationList = D2B0F592D9BB376AB888289E /* Build configuration list for PBXProject "Sorosoro" */;
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				en,
+				ja,
 			);
 			mainGroup = 18D281C9204979EB3137C88A;
 			minimizedProjectReferenceProxies = 1;
@@ -444,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64C8646EB606A6252EA21D8 /* Assets.xcassets in Resources */,
+				F984A1D97ABE82F409484D5E /* Localizable.xcstrings in Resources */,
 				D0657A50C0DD5E218CDE86B1 /* Sorosoro.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD69B1059A8A40335CE8E6CA /* Assets.xcassets in Resources */,
+				11E97B62B143FC6F9049C6F3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +630,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				KNOWN_REGIONS = "ja en zh-Hans zh-Hant";
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -778,6 +787,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				KNOWN_REGIONS = "ja en zh-Hans zh-Hant";
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;

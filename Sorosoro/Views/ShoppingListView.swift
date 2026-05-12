@@ -5,14 +5,12 @@ struct ShoppingListView: View {
     @Environment(ShoppingListStore.self) private var shoppingListStore
     @Environment(PlanService.self) private var planService
     @Environment(SettingsStore.self) private var settingsStore
-    @State private var showingAutoAdd = false
 
     var body: some View {
         List {
-            // 自動追加候補
             let urgentItems = filteredUrgentItems
             if !urgentItems.isEmpty {
-                Section("そろそろ買い時") {
+                Section("shopping.urgent.section") {
                     ForEach(urgentItems) { item in
                         HStack {
                             VStack(alignment: .leading) {
@@ -38,10 +36,9 @@ struct ShoppingListView: View {
                 }
             }
 
-            // 買い物リスト
             let unchecked = shoppingListStore.uncheckedEntries
             if !unchecked.isEmpty {
-                Section("買い物リスト") {
+                Section("shopping.list.section") {
                     ForEach(unchecked) { entry in
                         if let item = itemStore.item(by: entry.itemId) {
                             ShoppingRowView(entry: entry, item: item)
@@ -50,7 +47,6 @@ struct ShoppingListView: View {
                 }
             }
 
-            // チェック済み
             let checked = shoppingListStore.checkedEntries
             if !checked.isEmpty {
                 Section {
@@ -67,9 +63,9 @@ struct ShoppingListView: View {
                     }
                 } header: {
                     HStack {
-                        Text("購入済み")
+                        Text("shopping.checked.section")
                         Spacer()
-                        Button("クリア") {
+                        Button("shopping.clear") {
                             shoppingListStore.clearChecked()
                         }
                         .font(.caption)
@@ -79,16 +75,15 @@ struct ShoppingListView: View {
 
             if urgentItems.isEmpty && unchecked.isEmpty && checked.isEmpty {
                 ContentUnavailableView {
-                    Label("買い物リストは空です", systemImage: "cart")
+                    Label("shopping.empty.title", systemImage: "cart")
                 } description: {
-                    Text("交換時期が近づくとここに表示されます")
+                    Text("shopping.empty.description")
                 }
             }
         }
-        .navigationTitle("買い物リスト")
+        .navigationTitle("shopping.list.section")
     }
 
-    /// 無料: 選択モードのみ、Plus: 全モード
     private var filteredUrgentItems: [Item] {
         if planService.canCrossModeShopping() {
             return itemStore.urgentItems()
@@ -126,9 +121,9 @@ struct ShoppingRowView: View {
 
             statusBadge
         }
-        .alert("購入完了", isPresented: $showingConfirm) {
-            Button("キャンセル", role: .cancel) {}
-            Button("買った！") {
+        .alert("alert.purchase.complete.title", isPresented: $showingConfirm) {
+            Button("common.cancel", role: .cancel) {}
+            Button("action.purchased") {
                 itemStore.markPurchased(id: item.id)
                 if let updatedItem = itemStore.item(by: item.id) {
                     NotificationService.scheduleNotification(for: updatedItem)
@@ -136,7 +131,7 @@ struct ShoppingRowView: View {
                 shoppingListStore.checkEntry(id: entry.id)
             }
         } message: {
-            Text("\(item.name)を購入済みにしますか？")
+            Text("alert.purchase.confirm.short \(item.name)")
         }
     }
 
@@ -144,15 +139,15 @@ struct ShoppingRowView: View {
     private var statusBadge: some View {
         switch item.status {
         case .overdue:
-            Text("\(abs(item.daysRemaining))日超過")
+            Text("status.overdue \(abs(item.daysRemaining))")
                 .font(.caption2)
                 .foregroundStyle(.red)
         case .soon:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption2)
                 .foregroundStyle(.orange)
         case .ok:
-            Text("あと\(item.daysRemaining)日")
+            Text("status.remaining \(item.daysRemaining)")
                 .font(.caption2)
                 .foregroundStyle(.green)
         }

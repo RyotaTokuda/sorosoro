@@ -15,12 +15,11 @@ struct WatchShoppingListView: View {
                 }
             }
 
-            // そろそろ買い時（リストに未追加のもの）
             let urgent = itemStore.urgentItems().filter { item in
                 !shoppingListStore.hasEntry(for: item.id)
             }
             if !urgent.isEmpty {
-                Section("追加候補") {
+                Section("watch.shopping.suggestions.section") {
                     ForEach(urgent.prefix(5)) { item in
                         Button {
                             shoppingListStore.addEntry(itemId: item.id)
@@ -38,11 +37,11 @@ struct WatchShoppingListView: View {
             }
 
             if unchecked.isEmpty && urgent.isEmpty {
-                Text("買い物リストは空です")
+                Text("watch.shopping.empty")
                     .foregroundStyle(.secondary)
             }
         }
-        .navigationTitle("買い物リスト")
+        .navigationTitle("watch.shopping.nav.title")
     }
 }
 
@@ -64,15 +63,15 @@ struct WatchShoppingRow: View {
                     .font(.body)
             }
         }
-        .alert("購入完了", isPresented: $showingConfirm) {
-            Button("キャンセル", role: .cancel) {}
-            Button("買った！") {
+        .alert("alert.purchase.complete.title", isPresented: $showingConfirm) {
+            Button("common.cancel", role: .cancel) {}
+            Button("action.purchased") {
                 itemStore.markPurchased(id: item.id)
                 shoppingListStore.checkEntry(id: entry.id)
                 WatchSyncService.shared.sendMarkPurchased(itemId: item.id)
             }
         } message: {
-            Text("\(item.name)を購入済みに？")
+            Text("watch.purchase.confirm.short \(item.name)")
         }
     }
 }

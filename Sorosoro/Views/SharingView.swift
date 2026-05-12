@@ -26,7 +26,7 @@ struct SharingView: UIViewControllerRepresentable {
             print("[Sharing] save error: \(error)")
         }
 
-        func itemTitle(for csc: UICloudSharingController) -> String? { "そろそろ - 消耗品リスト" }
+        func itemTitle(for csc: UICloudSharingController) -> String? { String(localized: "sharing.item.title") }
 
         func cloudSharingControllerDidSaveShare(_ csc: UICloudSharingController) {}
 
@@ -53,7 +53,7 @@ struct ShareButton: View {
                 // Plus 限定機能
                 Button { showingPaywall = true } label: {
                     HStack {
-                        Label("家族・パートナーと共有", systemImage: "person.2.fill")
+                        Label("sharing.title", systemImage: "person.2.fill")
                         Spacer()
                         Text("Plus")
                             .font(.caption.bold())
@@ -71,15 +71,15 @@ struct ShareButton: View {
                     if isPreparing {
                         HStack {
                             ProgressView().scaleEffect(0.8)
-                            Text("共有を準備中…")
+                            Text("sharing.preparing")
                         }
                     } else {
-                        Label("家族・パートナーと共有", systemImage: "person.2.fill")
+                        Label("sharing.title", systemImage: "person.2.fill")
                     }
                 }
                 .disabled(isPreparing)
             } else {
-                Label("iCloud にサインインすると共有できます", systemImage: "icloud.slash")
+                Label("sharing.icloud.required", systemImage: "icloud.slash")
                     .foregroundStyle(.secondary)
                     .font(.caption)
             }
@@ -90,8 +90,8 @@ struct ShareButton: View {
         .sheet(isPresented: $showingPaywall) {
             PaywallView()
         }
-        .alert("共有エラー", isPresented: .constant(errorMessage != nil)) {
-            Button("OK") { errorMessage = nil }
+        .alert("alert.share.error.title", isPresented: .constant(errorMessage != nil)) {
+            Button("common.ok") { errorMessage = nil }
         } message: {
             Text(errorMessage ?? "")
         }

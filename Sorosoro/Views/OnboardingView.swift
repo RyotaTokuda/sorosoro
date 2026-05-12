@@ -56,12 +56,12 @@ struct OnboardingView: View {
                 }
 
                 VStack(spacing: 12) {
-                    Text("補充のタイミングを\n見逃さないために")
+                    Text("onboarding.welcome.title")
                         .font(.system(size: 28, weight: .bold))
                         .multilineTextAlignment(.center)
                         .lineSpacing(4)
 
-                    Text("シャンプー・エンジンオイル・電池──\n「そろそろ必要かも」をアプリが先回りして知らせます")
+                    Text("onboarding.welcome.description")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
@@ -78,9 +78,9 @@ struct OnboardingView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("何を管理しますか？")
+                    Text("onboarding.mode.title")
                         .font(.title2.bold())
-                    Text("あとから変更できます")
+                    Text("onboarding.mode.subtitle")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -89,22 +89,22 @@ struct OnboardingView: View {
                 VStack(spacing: 12) {
                     modeCard(
                         mode: .daily,
-                        title: "日用品",
-                        description: "洗剤・シャンプー・トイレットペーパーなど\n使用量に合わせた補充タイミングを管理",
+                        titleKey: "mode.daily",
+                        descriptionKey: "onboarding.mode.daily.description",
                         examples: ["🧴 シャンプー", "🧻 トイレットペーパー", "🧼 洗剤", "🪥 歯ブラシ"],
                         color: .blue
                     )
                     modeCard(
                         mode: .car,
-                        title: "車",
-                        description: "エンジンオイル・タイヤ・ブレーキパッドなど\n走行距離に連動した交換時期を管理",
+                        titleKey: "mode.car",
+                        descriptionKey: "onboarding.mode.car.description",
                         examples: ["🛢 エンジンオイル", "🔧 オイルフィルター", "🚗 タイヤ", "⚙️ ブレーキパッド"],
                         color: .green
                     )
                 }
 
                 if selectedModes.isEmpty {
-                    Text("少なくとも1つ選んでください")
+                    Text("onboarding.mode.min.selection")
                         .font(.caption)
                         .foregroundStyle(.red)
                         .padding(.horizontal, 4)
@@ -119,9 +119,9 @@ struct OnboardingView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("もう少し教えてください")
+                    Text("onboarding.profile.title")
                         .font(.title2.bold())
-                    Text("消耗スピードをあなたの生活に合わせます")
+                    Text("onboarding.profile.subtitle")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -140,9 +140,9 @@ struct OnboardingView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.system(size: 48))
                             .foregroundStyle(.green)
-                        Text("準備完了！")
+                        Text("onboarding.ready.title")
                             .font(.title3.bold())
-                        Text("「はじめる」をタップしてください")
+                        Text("onboarding.ready.description")
                             .foregroundStyle(.secondary)
                     }
                     .frame(maxWidth: .infinity)
@@ -156,7 +156,7 @@ struct OnboardingView: View {
 
     // MARK: - Sub-views
 
-    private func modeCard(mode: Mode, title: String, description: String, examples: [String], color: Color) -> some View {
+    private func modeCard(mode: Mode, titleKey: LocalizedStringKey, descriptionKey: LocalizedStringKey, examples: [String], color: Color) -> some View {
         let isSelected = selectedModes.contains(mode)
         return Button {
             if isSelected {
@@ -172,10 +172,10 @@ struct OnboardingView: View {
                         .foregroundStyle(isSelected ? color : .secondary)
                         .frame(width: 32)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(title)
+                        Text(titleKey)
                             .font(.headline)
                             .foregroundStyle(.primary)
-                        Text(description)
+                        Text(descriptionKey)
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .lineSpacing(2)
@@ -215,14 +215,14 @@ struct OnboardingView: View {
 
     private var familySection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("家族の人数", systemImage: "person.2.fill")
+            Label("onboarding.family.section", systemImage: "person.2.fill")
                 .font(.headline)
 
             VStack(spacing: 0) {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("大人")
-                        Text("高校生以上")
+                        Text("onboarding.adult.label")
+                        Text("onboarding.adult.subtitle")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
@@ -236,8 +236,8 @@ struct OnboardingView: View {
 
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("子供")
-                        Text("中学生以下（消耗量は大人の約60%）")
+                        Text("onboarding.child.label")
+                        Text("onboarding.child.subtitle")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
@@ -250,7 +250,8 @@ struct OnboardingView: View {
             .background(Color(UIColor.secondarySystemGroupedBackground))
             .clipShape(RoundedRectangle(cornerRadius: 14))
 
-            Text("合計 \(adultsCount)大人 + \(childrenCount)子供 → 実質 \(String(format: "%.1f", Double(adultsCount) + Double(childrenCount) * 0.6))人分")
+            let effective = String(format: "%.1f", Double(adultsCount) + Double(childrenCount) * 0.6)
+            Text("onboarding.family.summary \(adultsCount) \(childrenCount) \(effective)")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
@@ -258,12 +259,12 @@ struct OnboardingView: View {
 
     private var carSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("車の情報", systemImage: "car.fill")
+            Label("onboarding.car.section", systemImage: "car.fill")
                 .font(.headline)
 
             VStack(spacing: 0) {
                 HStack {
-                    Text("月間走行距離")
+                    Text("settings.monthly.mileage")
                     Spacer()
                     Picker("", selection: $monthlyMileage) {
                         ForEach(MonthlyMileage.allCases) { m in
@@ -278,7 +279,7 @@ struct OnboardingView: View {
                 Divider().padding(.leading, 16)
 
                 HStack {
-                    Text("車の種類")
+                    Text("settings.vehicle.type")
                     Spacer()
                     Picker("", selection: $vehicleType) {
                         ForEach(VehicleType.allCases) { v in
@@ -293,7 +294,7 @@ struct OnboardingView: View {
             .background(Color(UIColor.secondarySystemGroupedBackground))
             .clipShape(RoundedRectangle(cornerRadius: 14))
 
-            Text("走行距離に応じてオイル・タイヤの交換周期を自動計算します")
+            Text("onboarding.car.hint")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
@@ -374,7 +375,7 @@ struct OnboardingView: View {
                 }
             } label: {
                 HStack(spacing: 8) {
-                    Text(page == totalPages - 1 ? "はじめる" : "次へ")
+                    Text(page == totalPages - 1 ? String(localized: "onboarding.start") : String(localized: "onboarding.next"))
                         .font(.headline)
                     if page < totalPages - 1 {
                         Image(systemName: "chevron.right")

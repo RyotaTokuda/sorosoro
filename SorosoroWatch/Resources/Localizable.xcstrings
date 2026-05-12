@@ -1,0 +1,1408 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "action.add.to.shopping" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add to Shopping List" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買い物リストに追加" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "添加到购物清单" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "加入購物清單" } }
+      }
+    },
+    "action.purchased" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Purchased!" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買った！" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已购买！" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已購買！" } }
+      }
+    },
+    "alert.purchase.complete.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Purchase Complete" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "購入完了" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购买完成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購買完成" } }
+      }
+    },
+    "alert.purchase.confirm.message %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark %@ as purchased?\nNext due date will be updated." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%@を購入済みにしますか？\n次回予定日が更新されます。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将%@标记为已购买？\n下次到期日将更新。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "將%@標記為已購買？\n下次到期日將更新。" } }
+      }
+    },
+    "alert.purchase.confirm.short %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark %@ as purchased?" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%@を購入済みにしますか？" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将%@标记为已购买？" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "將%@標記為已購買？" } }
+      }
+    },
+    "alert.share.error.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share Error" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "共有エラー" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "分享错误" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "分享錯誤" } }
+      }
+    },
+    "common.cancel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャンセル" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "取消" } }
+      }
+    },
+    "common.close" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "閉じる" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关闭" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "關閉" } }
+      }
+    },
+    "common.edit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "編集" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "编辑" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "編輯" } }
+      }
+    },
+    "common.ok" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "OK" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "OK" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "好" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "好" } }
+      }
+    },
+    "common.save" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "保存" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "儲存" } }
+      }
+    },
+    "form.cycle.stepper %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Cycle: %lld day" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Cycle: %lld days" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "交換周期: %lld日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "更换周期: %lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "更換週期: %lld天" } }
+      }
+    },
+    "form.last.purchase.date" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Last Purchase Date" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "前回購入日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "上次购买日期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "上次購買日期" } }
+      }
+    },
+    "form.memo.placeholder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Memo (optional)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "メモ（任意）" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "备注（可选）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "備註（選填）" } }
+      }
+    },
+    "form.name.placeholder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Item Name" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテム名" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "项目名称" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "項目名稱" } }
+      }
+    },
+    "form.next.due.date" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next Due Date" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "次回予定日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下次到期日" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "下次到期日" } }
+      }
+    },
+    "form.notification.days.before %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Notify %lld day before" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Notify %lld days before" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%lld日前に通知" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "提前%lld天通知" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "提前%lld天通知" } }
+      }
+    },
+    "form.notification.toggle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notify" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "通知する" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开启通知" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "開啟通知" } }
+      }
+    },
+    "form.section.basic" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Basic Info" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "基本情報" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "基本信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "基本資訊" } }
+      }
+    },
+    "form.section.memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Memo" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "メモ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "备注" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "備註" } }
+      }
+    },
+    "form.section.notification" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notification" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "通知" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "通知" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "通知" } }
+      }
+    },
+    "form.title.edit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit Item" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテム編集" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "编辑项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "編輯項目" } }
+      }
+    },
+    "form.title.new" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Item" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新規アイテム" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新建项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "新建項目" } }
+      }
+    },
+    "item.detail.cycle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cycle" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "交換周期" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "更换周期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "更換週期" } }
+      }
+    },
+    "item.detail.days.remaining" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Days Remaining" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "残り日数" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "剩余天数" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "剩餘天數" } }
+      }
+    },
+    "item.detail.days.value %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld day" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld days" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%lld日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "%lld天" } }
+      }
+    },
+    "item.detail.history.title %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Purchase History (Last %lld)" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Purchase History (Last %lld)" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "購入履歴 (直近%lld回)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购买记录（最近%lld次）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購買記錄（最近%lld次）" } }
+      }
+    },
+    "item.detail.last.purchase" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Last Purchase" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "前回購入日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "上次购买日" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "上次購買日" } }
+      }
+    },
+    "item.detail.memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Memo" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "メモ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "备注" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "備註" } }
+      }
+    },
+    "item.detail.next.due.date" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next Due" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "次回予定日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下次到期日" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "下次到期日" } }
+      }
+    },
+    "item.detail.not.found" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Item Not Found" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテムが見つかりません" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "找不到项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "找不到項目" } }
+      }
+    },
+    "item.detail.notification.days.before %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld day before" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld days before" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%lld日前" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "提前%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "提前%lld天" } }
+      }
+    },
+    "item.detail.notification.timing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notification Timing" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "通知タイミング" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "通知时间" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "通知時間" } }
+      }
+    },
+    "item.detail.section.detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Details" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "詳細" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "详情" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "詳情" } }
+      }
+    },
+    "item.detail.section.notification" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notification" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "通知" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "通知" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "通知" } }
+      }
+    },
+    "item.detail.status" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Status" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ステータス" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "状态" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "狀態" } }
+      }
+    },
+    "item.list.add.new" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Item" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新規作成" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新建项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "新建項目" } }
+      }
+    },
+    "item.list.add.template" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add from Template" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレートから追加" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从模板添加" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "從範本添加" } }
+      }
+    },
+    "item.list.empty.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add from template or create a new item" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレートから追加するか、新規作成してください" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从模板添加或新建项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "從範本添加或新建項目" } }
+      }
+    },
+    "item.list.empty.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Items" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテムがありません" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "沒有項目" } }
+      }
+    },
+    "item.list.mode.switch.hint" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap the tab to switch to this mode" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "タブをタップしてこのモードに切り替えられます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "点击标签切换到此模式" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "點擊標籤切換到此模式" } }
+      }
+    },
+    "item.row.cycle.days %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Cycle: %lld day" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Cycle: %lld days" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "周期: %lld日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "周期: %lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "週期: %lld天" } }
+      }
+    },
+    "mileage.high" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Over 1500km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "1500km〜" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "1500km以上" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "1500km以上" } }
+      }
+    },
+    "mileage.low" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Under 500km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "〜500km" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "500km以下" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "500km以下" } }
+      }
+    },
+    "mileage.medium" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "500–1500km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "500〜1500km" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "500-1500km" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "500-1500km" } }
+      }
+    },
+    "mode.car" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Car" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "車" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "汽车" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "汽車" } }
+      }
+    },
+    "mode.daily" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Daily Items" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "日用品" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "日用品" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "日用品" } }
+      }
+    },
+    "mode.gadget" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Gadget" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ガジェット" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "数码" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "數位" } }
+      }
+    },
+    "notification.action.purchased" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Purchased!" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買った！" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已购买！" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已購買！" } }
+      }
+    },
+    "notification.body %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld day until replacement" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld days until replacement" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "交換時期まであと%lld日です" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "距离更换还有%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "距離更換還有%lld天" } }
+      }
+    },
+    "notification.title %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Time to replace %@" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%@の交換時期です" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "是时候换%@了" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "該換%@了" } }
+      }
+    },
+    "onboarding.adult.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Adults" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "大人" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "大人" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "大人" } }
+      }
+    },
+    "onboarding.adult.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "High school age and above" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "高校生以上" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "高中生及以上" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "高中生及以上" } }
+      }
+    },
+    "onboarding.car.hint" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Automatically calculates oil and tire replacement intervals based on mileage" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "走行距離に応じてオイル・タイヤの交換周期を自動計算します" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "根据行驶里程自动计算机油和轮胎的更换周期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "根據行駛里程自動計算機油和輪胎的更換週期" } }
+      }
+    },
+    "onboarding.car.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Car Info" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "車の情報" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "汽车信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "汽車資訊" } }
+      }
+    },
+    "onboarding.child.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Children" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "子供" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "孩子" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "孩子" } }
+      }
+    },
+    "onboarding.child.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Under 14 (uses ~60% of adults)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "中学生以下（消耗量は大人の約60%）" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "14岁以下（消耗量约为大人的60%）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "14歲以下（消耗量約為大人的60%）" } }
+      }
+    },
+    "onboarding.family.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Family Size" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "家族の人数" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "家庭人数" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "家庭人數" } }
+      }
+    },
+    "onboarding.family.summary %lld %lld %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Total: %1$lld adults + %2$lld children → ~%3$@ persons" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "合計 %1$lld大人 + %2$lld子供 → 実質 %3$@人分" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "总计: %1$lld大人 + %2$lld孩子 → 约%3$@人份" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "總計: %1$lld大人 + %2$lld孩子 → 約%3$@人份" } }
+      }
+    },
+    "onboarding.mode.car.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Engine oil, tires, brake pads, etc.\nManage replacement timing based on mileage" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "エンジンオイル・タイヤ・ブレーキパッドなど\n走行距離に連動した交換時期を管理" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "机油、轮胎、刹车片等\n根据行驶里程管理更换时机" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "機油、輪胎、剎車片等\n根據行駛里程管理更換時機" } }
+      }
+    },
+    "onboarding.mode.daily.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Detergent, shampoo, toilet paper, etc.\nManage replenishment timing based on usage" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "洗剤・シャンプー・トイレットペーパーなど\n使用量に合わせた補充タイミングを管理" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "洗涤剂、洗发水、卫生纸等\n根据用量管理补充时机" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "洗滌劑、洗髮精、衛生紙等\n根據用量管理補充時機" } }
+      }
+    },
+    "onboarding.mode.min.selection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Please select at least one" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "少なくとも1つ選んでください" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请至少选择一个" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "請至少選擇一個" } }
+      }
+    },
+    "onboarding.mode.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "You can change this later" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "あとから変更できます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "之后可以更改" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "之後可以更改" } }
+      }
+    },
+    "onboarding.mode.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "What do you want to manage?" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "何を管理しますか？" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "您要管理什么？" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "您要管理什麼？" } }
+      }
+    },
+    "onboarding.next" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "次へ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下一步" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "下一步" } }
+      }
+    },
+    "onboarding.profile.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "We'll adjust consumption speed to your lifestyle" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "消耗スピードをあなたの生活に合わせます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "我们将根据您的生活调整消耗速度" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "我們將根據您的生活調整消耗速度" } }
+      }
+    },
+    "onboarding.profile.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tell Us a Bit More" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "もう少し教えてください" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请再告诉我们一些" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "請再告訴我們一些" } }
+      }
+    },
+    "onboarding.ready.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap \"Start\" to begin" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "「はじめる」をタップしてください" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请点击「开始」" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "請點擊「開始」" } }
+      }
+    },
+    "onboarding.ready.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ready to Start!" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "準備完了！" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "准备就绪！" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "準備就緒！" } }
+      }
+    },
+    "onboarding.start" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "はじめる" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开始" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "開始" } }
+      }
+    },
+    "onboarding.welcome.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Shampoo, engine oil, batteries — the app alerts you before you run out." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "シャンプー・エンジンオイル・電池──\n「そろそろ必要かも」をアプリが先回りして知らせます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "洗发水、机油、电池——\n应用提前提醒您补货。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "洗髮精、機油、電池——\n應用程式提前提醒您補貨。" } }
+      }
+    },
+    "onboarding.welcome.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Never Miss a Replenishment" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "補充のタイミングを\n見逃さないために" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "不再错过补货时机" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "不再錯過補貨時機" } }
+      }
+    },
+    "paywall.cta" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start Plus" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Plusをはじめる" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开始使用Plus" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "開始使用Plus" } }
+      }
+    },
+    "paywall.feature.all.modes" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All Modes Active" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "全モード同時に管理" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同时管理所有模式" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "同時管理所有模式" } }
+      }
+    },
+    "paywall.feature.all.modes.detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Use both Daily and Car modes" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "日用品・車 を両方使える" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "日用品和汽车模式同时使用" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "日用品和汽車模式同時使用" } }
+      }
+    },
+    "paywall.feature.all.modes.free.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "1 only" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "1つのみ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仅1个" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "僅1個" } }
+      }
+    },
+    "paywall.feature.memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Memo" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "メモ機能" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "备注功能" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "備註功能" } }
+      }
+    },
+    "paywall.feature.memo.detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Note brand, maker, and purchase location" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "銘柄・メーカー・購入先のメモ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "记录品牌、制造商和购买地点" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "記錄品牌、製造商和購買地點" } }
+      }
+    },
+    "paywall.feature.sharing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share with Family" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "家族・パートナーと共有" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "与家人分享" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "與家人分享" } }
+      }
+    },
+    "paywall.feature.sharing.detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share the same list via iCloud" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "iCloudで同じ管理リストを共有" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "通过iCloud共享同一管理清单" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "透過iCloud共享同一管理清單" } }
+      }
+    },
+    "paywall.feature.templates" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Custom Templates" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "カスタムテンプレート" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "自定义模板" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "自訂範本" } }
+      }
+    },
+    "paywall.feature.templates.detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save frequently bought items as templates" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "よく買う商品を登録して再利用" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存常购商品作为模板" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "儲存常購商品作為範本" } }
+      }
+    },
+    "paywall.feature.templates.free.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Presets only" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プリセットのみ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仅预设" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "僅預設" } }
+      }
+    },
+    "paywall.feature.unlimited" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unlimited Items & Notifications" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテム・通知 無制限" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "项目和通知无限制" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "項目和通知無限制" } }
+      }
+    },
+    "paywall.feature.unlimited.detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No limits on items or notifications" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "登録件数・通知件数の上限なし" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "项目和通知数量无上限" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "項目和通知數量無上限" } }
+      }
+    },
+    "paywall.feature.unlimited.free.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "10/5 each" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "各10件/5件" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "各10个/5个" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "各10個/5個" } }
+      }
+    },
+    "paywall.features.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "What Plus Offers" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Plusでできること" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Plus 功能" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "Plus 功能" } }
+      }
+    },
+    "paywall.legal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Subscriptions are charged after confirmation. They auto-renew unless canceled 24 hours before the current period ends. Manage in App Store → Settings → Apple ID → Subscriptions." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "サブスクリプションは確認後に課金されます。現在の期間終了24時間前までにキャンセルしない限り自動更新されます。App Store「設定」→「Apple ID」→「サブスクリプション」から解約できます。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认后将收取订阅费用。除非在当前期限结束前24小时取消，否则将自动续订。可在App Store「设置」→「Apple ID」→「订阅」中取消。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "確認後將收取訂閱費用。除非在當前期限結束前24小時取消，否則將自動續訂。可在App Store「設定」→「Apple ID」→「訂閱」中取消。" } }
+      }
+    },
+    "paywall.monthly.equivalent %@ %lld" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%1$@/mo (~%2$lld%% off)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%1$@/月（約%2$lld%%割引）" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%1$@/月（约%2$lld%%折扣）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "%1$@/月（約%2$lld%%折扣）" } }
+      }
+    },
+    "paywall.plan.monthly" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monthly Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "月額プラン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "月度方案" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "月度方案" } }
+      }
+    },
+    "paywall.plan.section.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose a Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プランを選択" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择方案" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "選擇方案" } }
+      }
+    },
+    "paywall.plan.yearly" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Annual Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "年額プラン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "年度方案" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "年度方案" } }
+      }
+    },
+    "paywall.privacy" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Privacy Policy" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プライバシーポリシー" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "隐私政策" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "隱私政策" } }
+      }
+    },
+    "paywall.purchase.error" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Purchase Failed" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "購入に失敗しました" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购买失败" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購買失敗" } }
+      }
+    },
+    "paywall.purchasing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Processing..." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "処理中..." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "处理中..." } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "處理中..." } }
+      }
+    },
+    "paywall.restore" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Restore Purchases" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "購入を復元" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "恢复购买" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "恢復購買" } }
+      }
+    },
+    "paywall.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Smarter Management." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "管理を、もっとかしこく。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "更智能地管理。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "更聰明地管理。" } }
+      }
+    },
+    "paywall.terms" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Terms of Use" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "利用規約" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用条款" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "使用條款" } }
+      }
+    },
+    "paywall.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Kaidoki Plus" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買いどき Plus" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "买到时 Plus" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "買到時 Plus" } }
+      }
+    },
+    "paywall.yearly.badge" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "2 Months Free" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "2ヶ月分お得" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "节省2个月" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "節省2個月" } }
+      }
+    },
+    "settings.adults.count %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Adults: %lld" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Adults: %lld" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "大人: %lld人" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "大人: %lld人" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "大人: %lld人" } }
+      }
+    },
+    "settings.children.count %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Children (under 14): %lld" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Children (under 14): %lld" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "子供（中学生以下）: %lld人" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "孩子（14岁以下）: %lld人" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "孩子（14歲以下）: %lld人" } }
+      }
+    },
+    "settings.current.plan" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Current Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "現在のプラン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前方案" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "目前方案" } }
+      }
+    },
+    "settings.family.hint" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Children count as ~60% of adults. Applied to daily item replenishment timing." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "子供は大人の約60%として計算。日用品の補充タイミングに反映されます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "孩子按大人的约60%计算，会影响日用品补充时间。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "孩子按大人的約60%計算，會影響日用品補充時間。" } }
+      }
+    },
+    "settings.mode.picker.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mode" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "モード" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "模式" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "模式" } }
+      }
+    },
+    "settings.monthly.mileage" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monthly Mileage" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "月間走行距離" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "月行驶里程" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "月行駛里程" } }
+      }
+    },
+    "settings.notification.default %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Default: %lld day before" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Default: %lld days before" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "デフォルト通知: %lld日前" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "默认: 提前%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "預設: 提前%lld天" } }
+      }
+    },
+    "settings.notification.global.toggle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enable Notifications" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "通知を有効にする" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开启通知" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "開啟通知" } }
+      }
+    },
+    "settings.plan.free" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Free" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "無料" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "免费" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "免費" } }
+      }
+    },
+    "settings.restore.purchases" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Restore Purchases" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "購入の復元" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "恢复购买" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "恢復購買" } }
+      }
+    },
+    "settings.section.active.mode" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Active Mode" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アクティブモード" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "活动模式" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "使用中模式" } }
+      }
+    },
+    "settings.section.app.info" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "App Info" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アプリ情報" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "应用信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "應用程式資訊" } }
+      }
+    },
+    "settings.section.car" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Car Info" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "車の情報" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "汽车信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "汽車資訊" } }
+      }
+    },
+    "settings.section.family" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Family Size" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "家族の人数" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "家庭人数" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "家庭人數" } }
+      }
+    },
+    "settings.section.notification" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notification" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "通知" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "通知" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "通知" } }
+      }
+    },
+    "settings.section.plan" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プラン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "订阅方案" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "訂閱方案" } }
+      }
+    },
+    "settings.section.sharing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share with Family" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "家族・パートナーと共有" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "与家人分享" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "與家人分享" } }
+      }
+    },
+    "settings.section.visible.tabs" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Visible Tabs" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "表示するタブ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示的标签" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "顯示的標籤" } }
+      }
+    },
+    "settings.upgrade" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade to Plus" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Plus にアップグレード" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级到Plus" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "升級到Plus" } }
+      }
+    },
+    "settings.vehicle.type" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Vehicle Type" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "車の種類" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "车辆类型" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "車輛類型" } }
+      }
+    },
+    "settings.version" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Version" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "バージョン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "版本" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "版本" } }
+      }
+    },
+    "sharing.icloud.required" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sign in to iCloud to share" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "iCloud にサインインすると共有できます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "登录iCloud即可分享" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "登入iCloud即可分享" } }
+      }
+    },
+    "sharing.item.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Kaidoki - Supplies List" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買いどき - 消耗品リスト" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "买到时 - 消耗品清单" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "買到時 - 消耗品清單" } }
+      }
+    },
+    "sharing.preparing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preparing Share…" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "共有を準備中…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "准备分享中…" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "準備分享中…" } }
+      }
+    },
+    "sharing.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share with Family" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "家族・パートナーと共有" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "与家人分享" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "與家人分享" } }
+      }
+    },
+    "shopping.checked.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Purchased" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "購入済み" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已购买" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已購買" } }
+      }
+    },
+    "shopping.clear" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Clear" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "クリア" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清除" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "清除" } }
+      }
+    },
+    "shopping.empty.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Items approaching replacement time will appear here" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "交換時期が近づくとここに表示されます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "临近更换时间的项目将显示在此处" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "臨近更換時間的項目將顯示於此" } }
+      }
+    },
+    "shopping.empty.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Shopping List is Empty" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買い物リストは空です" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购物清单为空" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購物清單為空" } }
+      }
+    },
+    "shopping.list.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Shopping List" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買い物リスト" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购物清单" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購物清單" } }
+      }
+    },
+    "shopping.urgent.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Almost Time to Buy" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "そろそろ買い時" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快到补货时间" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "快到補貨時間" } }
+      }
+    },
+    "status.ok.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "OK" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "まだ大丈夫" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "还充裕" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "還充裕" } }
+      }
+    },
+    "status.overdue %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld day overdue" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld days overdue" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%lld日超過" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "超期%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "超期%lld天" } }
+      }
+    },
+    "status.overdue.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Overdue" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "期限切れ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已超期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已超期" } }
+      }
+    },
+    "status.remaining %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld day left" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld days left" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "あと%lld日" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "还剩%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "還剩%lld天" } }
+      }
+    },
+    "status.soon.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Almost Due" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "そろそろ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快到期了" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "快到期了" } }
+      }
+    },
+    "suggestion.apply %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "Change cycle to %lld day" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "Change cycle to %lld days" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "周期を%lld日に変更" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将周期改为%lld天" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "將週期改為%lld天" } }
+      }
+    },
+    "suggestion.body %lld %lld %lld" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Based on %1$lld purchases, your actual consumption pace is about **%2$lld days**. (Current: %3$lld days)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%1$lld回の購入実績から、実際の消費ペースは約**%2$lld日**です。（現在の設定: %3$lld日）" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "根据%1$lld次购买记录，实际消耗速度约**%2$lld天**。（当前设置: %3$lld天）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "根據%1$lld次購買記錄，實際消耗速度約**%2$lld天**。（目前設定: %3$lld天）" } }
+      }
+    },
+    "suggestion.dismiss" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Keep Current" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "このままにする" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保持不变" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "保持不變" } }
+      }
+    },
+    "suggestion.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cycle Can Be Optimized" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "周期を最適化できます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "可以优化周期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "可以優化週期" } }
+      }
+    },
+    "tab.settings" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Settings" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "設定" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "設定" } }
+      }
+    },
+    "tab.shopping" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Shopping" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買い物リスト" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购物清单" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購物清單" } }
+      }
+    },
+    "template.base.days %lld" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "(Base: %lld day)" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "(Base: %lld days)" } }
+            }
+          }
+        },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "(基準: %lld日)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "（基准: %lld天）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "（基準: %lld天）" } }
+      }
+    },
+    "template.nav.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add from Template" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレートから追加" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从模板添加" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "從範本添加" } }
+      }
+    },
+    "template.section.custom" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Custom" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "カスタム" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "自定义" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "自訂" } }
+      }
+    },
+    "template.section.preset" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Presets" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プリセット" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "预设" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "預設" } }
+      }
+    },
+    "vehicle.diesel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Diesel" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ディーゼル車" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "柴油车" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "柴油車" } }
+      }
+    },
+    "vehicle.ev" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Electric" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "電気自動車" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电动车" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "電動車" } }
+      }
+    },
+    "vehicle.gasoline" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Gasoline" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ガソリン車" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "汽油车" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "汽油車" } }
+      }
+    },
+    "vehicle.hev" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hybrid" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ハイブリッド車" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "混动车" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "混合動力車" } }
+      }
+    },
+    "watch.detail.cycle.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cycle" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "周期" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "周期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "週期" } }
+      }
+    },
+    "watch.detail.last.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Last" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "前回" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "上次" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "上次" } }
+      }
+    },
+    "watch.detail.next.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "次回" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下次" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "下次" } }
+      }
+    },
+    "watch.home.all.ok.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No items almost due" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "そろそろなアイテムはありません" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有即将到期的项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "沒有即將到期的項目" } }
+      }
+    },
+    "watch.home.all.ok.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All Good!" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "全てOK" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全部正常" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "全部正常" } }
+      }
+    },
+    "watch.home.category.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Categories" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "カテゴリ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "分类" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "分類" } }
+      }
+    },
+    "watch.home.urgent.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Almost Due" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "そろそろ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快到期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "快到期" } }
+      }
+    },
+    "watch.item.list.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Items" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテムなし" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有项目" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "沒有項目" } }
+      }
+    },
+    "watch.nav.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Kaidoki" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買いどき" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "买到时" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "買到時" } }
+      }
+    },
+    "watch.purchase.confirm.short %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark %@ as bought?" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%@を購入済みに？" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "将%@标记为已购买？" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "將%@標記為已購買？" } }
+      }
+    },
+    "watch.shopping.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Shopping list is empty" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買い物リストは空です" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购物清单为空" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購物清單為空" } }
+      }
+    },
+    "watch.shopping.nav.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Shopping" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "買い物リスト" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购物清单" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "購物清單" } }
+      }
+    },
+    "watch.shopping.suggestions.section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Suggestions" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "追加候補" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "添加候选" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "添加候選" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}
