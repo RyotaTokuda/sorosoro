@@ -38,6 +38,9 @@ targets:
       - target: SorosoroWatch
         embed: true
         link: false
+      - target: SorosoroWidget
+        embed: true
+        link: false
     entitlements:
       path: Sorosoro/Sorosoro.entitlements
       properties:
@@ -69,6 +72,29 @@ targets:
       properties:
         com.apple.security.application-groups:
           - group.com.mankai.sorosoro
+  SorosoroWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: SorosoroWidget
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mankai.sorosoro.widget
+        INFOPLIST_FILE: SorosoroWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: SorosoroWidget/SorosoroWidget.entitlements
+        SWIFT_VERSION: "5.9"
+    dependencies:
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+      - sdk: AppIntents.framework
+    entitlements:
+      path: SorosoroWidget/SorosoroWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.mankai.sorosoro
+
   SorosoroTests:
     type: bundle.unit-test
     platform: iOS
@@ -84,6 +110,7 @@ schemes:
       targets:
         Sorosoro: all
         SorosoroWatch: all
+        SorosoroWidget: all
     run:
       config: Debug
       storeKitConfiguration: Sorosoro/Resources/Sorosoro.storekit

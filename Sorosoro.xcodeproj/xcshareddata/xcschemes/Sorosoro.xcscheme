@@ -35,6 +35,20 @@
                ReferencedContainer = "container:Sorosoro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BDF8AA12F0A20026843BAFD4"
+               BuildableName = "SorosoroWidget.appex"
+               BlueprintName = "SorosoroWidget"
+               ReferencedContainer = "container:Sorosoro.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
