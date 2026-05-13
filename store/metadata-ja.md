@@ -64,10 +64,10 @@
 
 | 項目 | URL |
 |------|-----|
-| サポートURL | https://mankai-software.com/support |
-| マーケティングURL | https://mankai-software.com |
-| プライバシーポリシー | https://mankai-software.com/privacy |
-| 利用規約 | https://mankai-software.com/terms |
+| サポートURL | https://mankai-software.vercel.app/support |
+| マーケティングURL | https://mankai-software.vercel.app |
+| プライバシーポリシー | https://mankai-software.vercel.app/privacy |
+| 利用規約 | https://mankai-software.vercel.app/terms |
 
 ---
 

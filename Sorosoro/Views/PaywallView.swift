@@ -188,10 +188,10 @@ struct PaywallView: View {
     private var footerSection: some View {
         VStack(spacing: 10) {
             HStack(spacing: 24) {
-                if let termsURL = URL(string: "https://mankai-software.com/terms") {
+                if let termsURL = URL(string: "https://mankai-software.vercel.app/terms") {
                     Link("paywall.terms", destination: termsURL)
                 }
-                if let privacyURL = URL(string: "https://mankai-software.com/privacy") {
+                if let privacyURL = URL(string: "https://mankai-software.vercel.app/privacy") {
                     Link("paywall.privacy", destination: privacyURL)
                 }
             }
