@@ -74,12 +74,11 @@ struct TemplatePickerView: View {
         let alreadyTracking = existingNames.contains(template.name.lowercased())
 
         return Button {
-            if !alreadyTracking { selectedTemplate = template }
+            selectedTemplate = template
         } label: {
             HStack(spacing: 10) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(template.name)
-                        .foregroundStyle(alreadyTracking ? .secondary : .primary)
                     if isAdjusted {
                         Text("template.base.days \(template.cycleDays)")
                             .font(.caption2)
@@ -94,17 +93,16 @@ struct TemplatePickerView: View {
                         .font(.caption)
                         .foregroundStyle(.green)
                         .labelStyle(.titleAndIcon)
-                } else {
-                    Text("item.detail.days.value \(days)")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    Image(systemName: "chevron.right")
-                        .font(.caption)
-                        .foregroundStyle(.tertiary)
                 }
+
+                Text("item.detail.days.value \(days)")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
             }
         }
-        .disabled(alreadyTracking)
     }
 
     private func categoryOrder(for mode: Mode) -> [String] {
