@@ -5,6 +5,8 @@ struct PaywallView: View {
     @Environment(PlanService.self) private var planService
     @Environment(\.dismiss) private var dismiss
     @State private var purchasing: PurchasingState = .idle
+    @State private var isLoadingProducts = false
+    @State private var loadFailed = false
 
     enum PurchasingState: Equatable { case idle, monthly, yearly }
 
@@ -31,10 +33,21 @@ struct PaywallView: View {
                         .foregroundStyle(.blue)
                 }
             }
-            .task { await planService.loadProducts() }
+            .task { await fetchProducts() }
             .onChange(of: planService.isPro) { _, isPro in
                 if isPro { dismiss() }
             }
+        }
+    }
+
+    private func fetchProducts() async {
+        guard planService.products.isEmpty else { return }
+        isLoadingProducts = true
+        loadFailed = false
+        await planService.loadProducts()
+        isLoadingProducts = false
+        if planService.products.isEmpty {
+            loadFailed = true
         }
     }
 
@@ -169,25 +182,50 @@ struct PaywallView: View {
                 .font(.headline)
                 .padding(.horizontal, 20)
 
-            HStack(spacing: 12) {
-                // Monthly card
-                pricingCard(
-                    label: "paywall.plan.monthly",
-                    product: planService.monthlyProduct,
-                    subtitle: nil,
-                    badge: nil,
-                    isHighlighted: false
-                )
-                // Yearly card
-                pricingCard(
-                    label: "paywall.plan.yearly",
-                    product: planService.yearlyProduct,
-                    subtitle: yearlySubtitle,
-                    badge: "paywall.yearly.badge",
-                    isHighlighted: true
-                )
+            if isLoadingProducts {
+                HStack {
+                    Spacer()
+                    ProgressView()
+                        .padding(.vertical, 24)
+                    Spacer()
+                }
+            } else if loadFailed {
+                VStack(spacing: 8) {
+                    Text("paywall.load.failed")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Button {
+                        Task { await fetchProducts() }
+                    } label: {
+                        Text("paywall.retry")
+                            .font(.caption.bold())
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.small)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+            } else {
+                HStack(spacing: 12) {
+                    // Monthly card
+                    pricingCard(
+                        label: "paywall.plan.monthly",
+                        product: planService.monthlyProduct,
+                        subtitle: nil,
+                        badge: nil,
+                        isHighlighted: false
+                    )
+                    // Yearly card
+                    pricingCard(
+                        label: "paywall.plan.yearly",
+                        product: planService.yearlyProduct,
+                        subtitle: yearlySubtitle,
+                        badge: "paywall.yearly.badge",
+                        isHighlighted: true
+                    )
+                }
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
         }
     }
 
@@ -244,19 +282,20 @@ struct PaywallView: View {
 
     private var ctaSection: some View {
         VStack(spacing: 10) {
-            // Yearly (primary)
-            ctaButton(plan: .yearly,
-                      product: planService.yearlyProduct,
-                      labelKey: "paywall.cta.yearly",
-                      isPrimary: true)
+            if !isLoadingProducts && !loadFailed {
+                // Yearly (primary)
+                ctaButton(plan: .yearly,
+                          product: planService.yearlyProduct,
+                          labelKey: "paywall.cta.yearly",
+                          isPrimary: true)
 
-            // Monthly (secondary)
-            ctaButton(plan: .monthly,
-                      product: planService.monthlyProduct,
-                      labelKey: "paywall.cta.monthly",
-                      isPrimary: false)
+                // Monthly (secondary)
+                ctaButton(plan: .monthly,
+                          product: planService.monthlyProduct,
+                          labelKey: "paywall.cta.monthly",
+                          isPrimary: false)
+            }
 
-            if case .idle = purchasing {} else {}
             Button("paywall.restore") {
                 Task { await planService.restorePurchases() }
             }
