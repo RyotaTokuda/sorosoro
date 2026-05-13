@@ -120,6 +120,7 @@ extension ItemTemplate {
             isDefault: false
         )
         if let kmBase = record["distanceKmBase"] as? Int64 { tmpl.distanceKmBase = Int(kmBase) }
+        if let cat = record["category"] as? String { tmpl.category = cat }
         return tmpl
     }
 
@@ -132,6 +133,7 @@ extension ItemTemplate {
         record["cycleDays"]               = Int64(cycleDays)
         record["notificationDaysBefore"]  = Int64(notificationDaysBefore)
         if let kmBase = distanceKmBase { record["distanceKmBase"] = Int64(kmBase) }
+        if !category.isEmpty { record["category"] = category }
         return record
     }
 }

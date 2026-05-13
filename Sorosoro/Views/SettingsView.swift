@@ -135,6 +135,16 @@ struct SettingsView: View {
                 Button("settings.restore.purchases") {
                     Task { await planService.restorePurchases() }
                 }
+                Link(destination: URL(string: "https://mankai-software.vercel.app/tokushoho")!) {
+                    HStack {
+                        Label("settings.tokushoho", systemImage: "scroll")
+                            .foregroundStyle(.primary)
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                            .font(.caption)
+                            .foregroundStyle(.tertiary)
+                    }
+                }
             }
 
         }

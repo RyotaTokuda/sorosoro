@@ -19,25 +19,31 @@ enum VehicleType: String, Codable, CaseIterable, Identifiable {
 }
 
 enum MonthlyMileage: String, Codable, CaseIterable, Identifiable {
-    case low    // ~500km
-    case medium // 500~1500km
-    case high   // 1500km~
+    case very_low  // ~300km
+    case low       // 300~600km
+    case medium    // 600~1000km
+    case high      // 1000~1500km
+    case very_high // 1500km~
 
     var id: String { rawValue }
 
     var displayName: String {
         switch self {
-        case .low:    String(localized: "mileage.low")
-        case .medium: String(localized: "mileage.medium")
-        case .high:   String(localized: "mileage.high")
+        case .very_low:  String(localized: "mileage.very_low")
+        case .low:       String(localized: "mileage.low")
+        case .medium:    String(localized: "mileage.medium")
+        case .high:      String(localized: "mileage.high")
+        case .very_high: String(localized: "mileage.very_high")
         }
     }
 
     var kmPerMonth: Int {
         switch self {
-        case .low:    300
-        case .medium: 1000
-        case .high:   2000
+        case .very_low:  200
+        case .low:       450
+        case .medium:    800
+        case .high:      1250
+        case .very_high: 2000
         }
     }
 }

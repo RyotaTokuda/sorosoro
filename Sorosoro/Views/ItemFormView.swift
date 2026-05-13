@@ -19,13 +19,42 @@ struct ItemFormView: View {
 
     private var isEditing: Bool { editingItem != nil }
 
+    private var cycleDayOptions: [Int] {
+        let standard = [7, 14, 21, 30, 45, 60, 90, 120, 180, 270, 365, 545, 730, 1095]
+        if standard.contains(cycleDays) { return standard }
+        return (standard + [cycleDays]).sorted()
+    }
+
+    private func cycleDaysLabel(_ days: Int) -> String {
+        switch days {
+        case 7:    return "7日（1週間）"
+        case 14:   return "14日（2週間）"
+        case 21:   return "21日（3週間）"
+        case 30:   return "30日（約1ヶ月）"
+        case 45:   return "45日（約1.5ヶ月）"
+        case 60:   return "60日（約2ヶ月）"
+        case 90:   return "90日（約3ヶ月）"
+        case 120:  return "120日（約4ヶ月）"
+        case 180:  return "180日（半年）"
+        case 270:  return "270日（約9ヶ月）"
+        case 365:  return "365日（1年）"
+        case 545:  return "545日（約1.5年）"
+        case 730:  return "730日（2年）"
+        case 1095: return "1095日（3年）"
+        default:   return "\(days)日"
+        }
+    }
+
     var body: some View {
         Form {
             Section("form.section.basic") {
                 TextField("form.name.placeholder", text: $name)
 
-                Stepper(String(localized: "form.cycle.stepper \(cycleDays)"),
-                        value: $cycleDays, in: 1...9999)
+                Picker(String(localized: "form.cycle.label"), selection: $cycleDays) {
+                    ForEach(cycleDayOptions, id: \.self) { days in
+                        Text(cycleDaysLabel(days)).tag(days)
+                    }
+                }
 
                 DatePicker(
                     String(localized: "form.last.purchase.date"),

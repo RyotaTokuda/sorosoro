@@ -104,6 +104,14 @@
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "更換週期: %lld天" } }
       }
     },
+    "form.cycle.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Replacement Cycle" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "交換周期" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "更换周期" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "更換週期" } }
+      }
+    },
     "form.last.purchase.date" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Last Purchase Date" } },
@@ -381,26 +389,42 @@
     },
     "mileage.high" : {
       "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "1000–1500km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "1000〜1500km" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "1000-1500km" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "1000-1500km" } }
+      }
+    },
+    "mileage.low" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "300–600km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "300〜600km" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "300-600km" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "300-600km" } }
+      }
+    },
+    "mileage.medium" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "600–1000km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "600〜1000km" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "600-1000km" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "600-1000km" } }
+      }
+    },
+    "mileage.very_high" : {
+      "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Over 1500km" } },
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "1500km〜" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "1500km以上" } },
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "1500km以上" } }
       }
     },
-    "mileage.low" : {
+    "mileage.very_low" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Under 500km" } },
-        "ja" : { "stringUnit" : { "state" : "translated", "value" : "〜500km" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "500km以下" } },
-        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "500km以下" } }
-      }
-    },
-    "mileage.medium" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "500–1500km" } },
-        "ja" : { "stringUnit" : { "state" : "translated", "value" : "500〜1500km" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "500-1500km" } },
-        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "500-1500km" } }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Under 300km" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "〜300km" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "300km以下" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "300km以下" } }
       }
     },
     "mode.car" : {
@@ -425,6 +449,22 @@
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "ガジェット" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "数码" } },
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "數位" } }
+      }
+    },
+    "mode.health" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Health" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "健康" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "健康" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "健康" } }
+      }
+    },
+    "mode.pet" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pet" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ペット" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "宠物" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "寵物" } }
       }
     },
     "notification.action.purchased" : {
@@ -1015,6 +1055,14 @@
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "顯示的標籤" } }
       }
     },
+    "settings.tokushoho" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notation based on Specified Commercial Transaction Act" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "特定商取引法に基づく表記" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "基于特定商业交易法的标识" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "基於特定商業交易法的標示" } }
+      }
+    },
     "settings.upgrade" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade to Plus" } },
@@ -1257,6 +1305,14 @@
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "カスタム" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "自定义" } },
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "自訂" } }
+      }
+    },
+    "template.already.tracking" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tracking" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "追跡中" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "追踪中" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "追蹤中" } }
       }
     },
     "template.section.preset" : {

@@ -21,6 +21,11 @@ final class TemplateStore {
         return DefaultTemplates.templates(for: mode) + custom
     }
 
+    func customTemplates(for mode: Mode) -> [ItemTemplate] {
+        let modes: [Mode] = mode == .daily ? [.daily, .gadget] : [mode]
+        return customTemplates.filter { modes.contains($0.mode) }
+    }
+
     // MARK: - Operations
 
     func addCustomTemplate(_ template: ItemTemplate) {

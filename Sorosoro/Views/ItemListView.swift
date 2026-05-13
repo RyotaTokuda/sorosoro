@@ -78,7 +78,7 @@ struct ItemListView: View {
         }
         .sheet(isPresented: $showingTemplatePicker) {
             NavigationStack {
-                TemplatePickerView(mode: mode)
+                TemplatePickerView(mode: mode, existingItems: items)
             }
         }
         .sheet(isPresented: $showingPaywall) {
