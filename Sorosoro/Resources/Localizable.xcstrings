@@ -674,6 +674,30 @@
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "開始使用Plus" } }
       }
     },
+    "paywall.cta.yearly" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start with Annual Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "年額プランで始める" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "以年费方案开始" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "以年費方案開始" } }
+      }
+    },
+    "paywall.cta.monthly" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start with Monthly Plan" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "月額プランで始める" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "以月费方案开始" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "以月費方案開始" } }
+      }
+    },
+    "paywall.free.column" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Free" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "無料" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "免费" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "免費" } }
+      }
+    },
     "paywall.feature.all.modes" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "All Modes Active" } },

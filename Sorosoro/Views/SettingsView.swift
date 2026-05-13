@@ -148,6 +148,7 @@ struct SettingsView: View {
             }
 
         }
+        .contentMargins(.bottom, 80, for: .scrollContent)
         .navigationTitle("tab.settings")
         .sheet(isPresented: $showingPaywall) {
             PaywallView()

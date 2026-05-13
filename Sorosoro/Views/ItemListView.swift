@@ -19,16 +19,6 @@ struct ItemListView: View {
 
     var body: some View {
         List {
-            if isFreeInactiveMode {
-                HStack(spacing: 8) {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                        .foregroundStyle(.blue)
-                    Text("item.list.mode.switch.hint")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                .listRowBackground(Color(.systemGray6))
-            }
             if items.isEmpty {
                 ContentUnavailableView {
                     Label("item.list.empty.title", systemImage: "tray")

@@ -67,8 +67,8 @@ struct ContentView: View {
                     tabButton(for: tab)
                 }
             }
-            .padding(.top, 6)
-            .padding(.bottom, 8)
+            .padding(.top, 4)
+            .padding(.bottom, 2)
             .background(.regularMaterial)
         }
     }
@@ -92,7 +92,7 @@ struct ContentView: View {
             }
             .foregroundStyle(isSelected ? .blue : Color(UIColor.systemGray))
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 4)
+            .padding(.vertical, 2)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

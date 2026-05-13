@@ -42,6 +42,12 @@ struct ShoppingListView: View {
                     ForEach(unchecked) { entry in
                         if let item = itemStore.item(by: entry.itemId) {
                             ShoppingRowView(entry: entry, item: item)
+                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    NavigationLink(destination: ItemDetailView(itemId: item.id)) {
+                                        Label("common.edit", systemImage: "pencil")
+                                    }
+                                    .tint(.blue)
+                                }
                         }
                     }
                 }
