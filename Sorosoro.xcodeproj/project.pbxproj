@@ -44,7 +44,6 @@
 		48A6D00DD1E971DF99ED7665 /* WatchItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028772E75E0FA2A77E64D68 /* WatchItemListView.swift */; };
 		49C6540A51FE4D5F54FFEA1E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF722ED51E6363679210120 /* Item.swift */; };
 		4F3152588B5606194B2BE801 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457C961AF51A38E29941782 /* ItemListView.swift */; };
-		5022EF37E8163B079DEEDAE9 /* PaywallView.swift.bak in Resources */ = {isa = PBXBuildFile; fileRef = 48F2D4A0735B3BD0AF655955 /* PaywallView.swift.bak */; };
 		50CFE3E9413CE202426D3A4C /* CKRecord+Sorosoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23589D2BBC1893D09A85361D /* CKRecord+Sorosoro.swift */; };
 		5A491F3495EF1ACD903A9AC7 /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24FEFCCFA254E1455A4D1E /* TemplateStore.swift */; };
 		5CD672E30D98AB58C3A7D2AF /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EE42806F5B47723754FEF /* ItemStore.swift */; };
@@ -193,7 +192,6 @@
 		386145F340945C53322C7552 /* DefaultTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTemplates.swift; sourceTree = "<group>"; };
 		3D80AAE5E6A131091C74DA40 /* ItemTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTemplate.swift; sourceTree = "<group>"; };
 		464BE1617158605B1CB87E59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		48F2D4A0735B3BD0AF655955 /* PaywallView.swift.bak */ = {isa = PBXFileReference; path = PaywallView.swift.bak; sourceTree = "<group>"; };
 		4CAEBEC9C7470F24C1F7B04D /* ShoppingListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListStore.swift; sourceTree = "<group>"; };
 		4F4208B9475E0D74198C54E5 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		564F6AF59C716933FF37068B /* SorosoroWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SorosoroWidget.entitlements; sourceTree = "<group>"; };
@@ -324,7 +322,6 @@
 				6457C961AF51A38E29941782 /* ItemListView.swift */,
 				DFD6EB2474E5B58D60D57203 /* OnboardingView.swift */,
 				11D80C066093AB7EB9C802BA /* PaywallView.swift */,
-				48F2D4A0735B3BD0AF655955 /* PaywallView.swift.bak */,
 				3043129A13030A2438C6759D /* SettingsView.swift */,
 				BB1BE066FA3D7C12ED6AEB97 /* SharingView.swift */,
 				855DCBFC58DAB88D50897BD8 /* ShoppingListView.swift */,
@@ -556,6 +553,7 @@
 				Base,
 				en,
 				ja,
+				ko,
 				"zh-Hans",
 				"zh-Hant",
 			);
@@ -589,7 +587,6 @@
 			files = (
 				B64C8646EB606A6252EA21D8 /* Assets.xcassets in Resources */,
 				F984A1D97ABE82F409484D5E /* Localizable.xcstrings in Resources */,
-				5022EF37E8163B079DEEDAE9 /* PaywallView.swift.bak in Resources */,
 				D0657A50C0DD5E218CDE86B1 /* Sorosoro.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,7 +788,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 26;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = R7B3AEZ7TA;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -978,7 +975,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 26;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = R7B3AEZ7TA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
